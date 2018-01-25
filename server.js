@@ -25,3 +25,6 @@ db.sequelize.sync({ force: true }).then(function() {
 
 // Passport
 const passport = require("./config/passport.js")(app);
+
+//Routes goes here
+var passportRoute = require("./routes/pass-routes.js")(passport);

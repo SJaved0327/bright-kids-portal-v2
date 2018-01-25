@@ -21,3 +21,7 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+
+// Passport
+const passport = require("./config/passport.js")(app);

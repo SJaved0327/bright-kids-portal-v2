@@ -16,7 +16,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-
+// Serve up static assets
+app.use(express.static("client/build"));
 
 //Use our router configuration when we call /api
 app.use('/api', router);

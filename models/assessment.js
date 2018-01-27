@@ -14,8 +14,8 @@ module.exports = function(sequelize, DataTypes) {
 			type: DataTypes. TEXT,
 			allowNull: true,
 			len: [1]
-	},{
-		nowDate: Sequelize.DATE
+	},
+		nowDate: DataTypes.DATE
 	})
 
 	Assessment.associate = function(models) {
@@ -27,3 +27,4 @@ module.exports = function(sequelize, DataTypes) {
 	};
 
 	return Assessment;
+}

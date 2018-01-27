@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
 			len: [1]
 		}
 	},{
-		nowDate: Sequelize.DATE
+		nowDate: DataTypes.DATE
 	});
 
 	Post.associate = function(models) {

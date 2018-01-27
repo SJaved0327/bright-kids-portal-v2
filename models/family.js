@@ -1,7 +1,7 @@
 module.exports = function(sequelize, DataTypes) {
 	var Family = sequelize.define("Family", {
 		id: {
-	      type: Sequelize.INTEGER,
+	      type: DataTypes.INTEGER,
 	      autoIncrement: true,
 	      primaryKey: true
 	    },
@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
 	  		}
 	  	},
 	  active: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
 	  	},
 	  parent2_first: {

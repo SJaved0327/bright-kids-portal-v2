@@ -1,7 +1,15 @@
+var Family = require("../models/Family")
+var Post = require("../models/Post")
+var Report = require("../models/Report")
+var Assessment = require("../models/Assessment")
+
+
+
 module.exports = function(sequelize, DataTypes) {
+
 	var Student = sequelize.define("Student", {
 		id: {
-	      type: Sequelize.INTEGER,
+	      type: DataTypes.INTEGER,
 	      autoIncrement: true,
 	      primaryKey: true
 	    },
@@ -62,7 +70,7 @@ module.exports = function(sequelize, DataTypes) {
 	  		}
 	  	},
 	  active: {
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false,
 	  	},
 	  address: {
@@ -71,36 +79,36 @@ module.exports = function(sequelize, DataTypes) {
       len: [1]
     	}
 	},{
-	  nowDate: Sequelize.DATE
+	  nowDate: DataTypes.DATE
 	})
 
-	//Student must belong to a family
-	Student.associate = function(models) {
-		Student.belongsTo(models.Family, {
-      foreignKey: {
-      	//student cannot be created without a family
-        allowNull: false
-      }
-    });
-	};
-	//POST
-	Student.associate = function(models) {
-		Student.hasMany(models.Post, {
-			onDelete: "cascade"
-		});
-	}
-	//REPORT
-	Student.associate = function(models) {
-		Student.hasMany(models.Report, {
-			onDelete: "cascade"
-		});
-	}
-	//ASSESSMENT
-	Student.associate = function(models) {
-		Student.hasMany(models.Assessment, {
-			onDelete: "cascade"
-		});
-	}
+	// //Student must belong to a family
+	// Student.associate = function(models) {
+	// 	Student.belongsTo(Family, {
+    //   foreignKey: {
+    //   	//student cannot be created without a family
+    //     allowNull: false
+    //   }
+    // });
+	// };
+	// //POST
+	// Student.associate = function(models) {
+	// 	Student.hasMany(Post, {
+	// 		onDelete: "cascade"
+	// 	});
+	// }
+	// //REPORT
+	// Student.associate = function(models) {
+	// 	Student.hasMany(Report, {
+	// 		onDelete: "cascade"
+	// 	});
+	// }
+	// //ASSESSMENT
+	// Student.associate = function(models) {
+	// 	Student.hasMany(Assessment, {
+	// 		onDelete: "cascade"
+	// 	});
+	// }
 
 	return Student;
 };

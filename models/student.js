@@ -6,33 +6,70 @@ module.exports = function(sequelize, DataTypes) {
 	      primaryKey: true
 	    },
 	  student_first: {
-	  		
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  student_last: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  current_grade: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  grade_of_entry: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  dob: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [10]
+	  		}
 	  	},
 	  gender: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: false,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  handed: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: true,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  account_manager: {
-
+	  		type: DataTypes.STRING,
+	  		allowNull: true,
+	  		validate: {
+	  			len: [1]
+	  		}
 	  	},
 	  active: {
-
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
 	  	},
-
+	  address: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+      len: [1]
+    	}
 	},{
 	  nowDate: Sequelize.DATE
 	})
@@ -46,6 +83,24 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
 	};
+	//POST
+	Student.associate = function(models) {
+		Student.hasMany(models.Post, {
+			onDelete: "cascade"
+		});
+	}
+	//REPORT
+	Student.associate = function(models) {
+		Student.hasMany(models.Report, {
+			onDelete: "cascade"
+		});
+	}
+	//ASSESSMENT
+	Student.associate = function(models) {
+		Student.hasMany(models.Assessment, {
+			onDelete: "cascade"
+		});
+	}
 
 	return Student;
 };

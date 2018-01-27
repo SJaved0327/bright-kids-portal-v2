@@ -16,4 +16,5 @@ const navBar = props => (
       Registration
     </NavItem>
   </Nav>
-</Navbar>;
+</Navbar>
+);

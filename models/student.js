@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
 	      primaryKey: true
 	    },
 	  student_first: {
-
+	  		
 	  	},
 	  student_last: {
 

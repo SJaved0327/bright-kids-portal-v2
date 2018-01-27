@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
 	var Family = sequelize.define("Family", {
-
+		
 	});
 	//associate Family with Students
 	Family.associate = function(models) {

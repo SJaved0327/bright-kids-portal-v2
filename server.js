@@ -1,6 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
+
+
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -21,3 +23,10 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+
+// Passport
+const passport = require("./config/passport.js")(app);
+
+//Routes goes here
+var passportRoute = require("./routes/pass-routes.js")(passport);

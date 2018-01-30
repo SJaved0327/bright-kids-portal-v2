@@ -1,7 +1,9 @@
 import React from "react";
 import "./navbar.css";
 
-const navBar = props => (
+class navbar extends Component {
+    render() {
+      return (
     <div>
         <Navbar>
         <Navbar.Header>

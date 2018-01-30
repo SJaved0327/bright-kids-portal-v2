@@ -2,7 +2,6 @@
     margin-right: 20px;
     border-radius: 25px; 
     transition: all .2s ease-in-out;
-    display: block
 
 
 }
@@ -19,12 +18,17 @@
 }
 
  .faPhone{
-     margin-bottom: 10px;
+     margin-top: 10px;
 
  }
 
  .faEnvelope{
-    margin-bottom: 10px;
+    margin-top: 10px;
+
+ }
+
+ .allFooterButtons{
+     margin-top:10px;
 
  }
 

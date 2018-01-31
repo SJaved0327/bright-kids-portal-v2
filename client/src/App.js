@@ -9,6 +9,7 @@ import NavbarTurtle from './components/navbar';
 //pages
 import LogIn from './components/pages/LogIn';
 import NoMatch from './components/pages/NoMatch';
+import Select from './components/pages/Select';
 
 const App = () => 
 	<Router>
@@ -16,6 +17,7 @@ const App = () =>
 			<NavbarTurtle />
 			<Switch>
 				<Route exact path="/" component={LogIn} />
+				<Route exact path="/select" component={Select} />
 				<Route component={NoMatch} />
 			</Switch>
 			<Footer />

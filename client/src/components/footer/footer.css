@@ -12,3 +12,36 @@
     
 
 }
+
+.footerRow{
+ align-content: center;
+}
+
+ .faPhone{
+     margin-top: 10px;
+
+ }
+
+ .faEnvelope{
+    margin-top: 10px;
+
+ }
+
+ .allFooterButtons{
+     margin-top:10px;
+
+ }
+
+
+ /* .footerText{
+     margin-right: 10px;
+
+ } */
+ /* .footerEmail{
+     margin-right:-20px
+ }
+
+ .footerPhone{
+    margin-right: 20px;
+
+ } */

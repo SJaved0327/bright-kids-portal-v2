@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'
+import React from 'react'
 
 const styles = {
   formDiv: {
@@ -16,14 +16,14 @@ const styles = {
   }
 };
 
-class SignIn extends Component {
+class SignIn extends React.Component {
 
 	render(){
 		return (
 			<div className="formDiv card" style={styles.formDiv}>
 				<form>
 					<h3>Sign In</h3>
-					<img src="../../../public/logo.png" width="150px" height="75px"/>
+					<img src="../../../public/logo.png" width="150px" height="75px" alt="bright kids logo"/>
 
 					<div className="form-group" style={styles.formGroup}>
 						<label for="emailInput" style={styles.label}>Email address:</label>

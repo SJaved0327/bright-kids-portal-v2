@@ -70,6 +70,7 @@ build/Release
 node_modules/
 jspm_packages/
 Desktop/
+src/
 
 # Typescript v1 declaration files
 typings/

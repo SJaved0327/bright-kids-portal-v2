@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+//react
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+//assets
 import './App.css';
-import Footer from './components/footer'
-import Navbar from './components/navbar'
+//components
+import Footer from './components/footer';
+import NavbarTurtle from './components/navbar';
+//pages
+import LogIn from './components/pages/LogIn';
+import NoMatch from './components/pages/NoMatch';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-      <Navbar />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Footer/>
-      </div>
-
-
-    );
-  }
-}
+const App = () => 
+	<Router>
+		<div>
+			<NavbarTurtle />
+			<Switch>
+				<Route exact path="/" component={LogIn} />
+				<Route component={NoMatch} />
+			</Switch>
+			<Footer />
+		</div>
+	</Router>;
 
 export default App;

@@ -1,5 +1,12 @@
 
+<<<<<<< HEAD
 # Created by https://www.gitignore.io/api/node,macos,windows,sublimetext,visualstudiocode
+=======
+# Created by https://www.gitignore.io/api/git,node,macos,sublimetext,windows
+
+### Git ###
+*.orig
+>>>>>>> d9c5d413a9af9a42253f8c8ae72de44293e0441b
 
 ### macOS ###
 *.DS_Store
@@ -89,6 +96,32 @@ typings/
 .env
 
 
+<<<<<<< HEAD
+=======
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# End of https://www.gitignore.io/api/node,macos,windows
+>>>>>>> d9c5d413a9af9a42253f8c8ae72de44293e0441b
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
@@ -121,6 +154,7 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+<<<<<<< HEAD
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -152,3 +186,7 @@ $RECYCLE.BIN/
 
 
 # End of https://www.gitignore.io/api/node,macos,windows,sublimetext,visualstudiocode
+=======
+
+# End of https://www.gitignore.io/api/git,node,macos,sublimetext
+>>>>>>> d9c5d413a9af9a42253f8c8ae72de44293e0441b

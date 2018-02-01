@@ -15,11 +15,13 @@ const App = () =>
 	<Router>
 		<div>
 			<NavbarTurtle />
+
 			<Switch>
 				<Route exact path="/" component={LogIn} />
 				<Route exact path="/select" component={Select} />
 				<Route component={NoMatch} />
 			</Switch>
+			
 			<Footer />
 		</div>
 	</Router>;

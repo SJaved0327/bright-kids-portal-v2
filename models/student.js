@@ -1,7 +1,7 @@
-var Family = require("../models/Family")
-var Post = require("../models/Post")
-var Report = require("../models/Report")
-var Assessment = require("../models/Assessment")
+// var Family = require("../models/Family")
+// var Post = require("../models/Post")
+// var Report = require("../models/Report")
+// var Assessment = require("../models/Assessment")
 
 
 
@@ -82,33 +82,34 @@ module.exports = function(sequelize, DataTypes) {
 	  nowDate: DataTypes.DATE
 	})
 
-	// //Student must belong to a family
-	// Student.associate = function(models) {
-	// 	Student.belongsTo(Family, {
-    //   foreignKey: {
-    //   	//student cannot be created without a family
-    //     allowNull: false
-    //   }
-    // });
-	// };
-	// //POST
-	// Student.associate = function(models) {
-	// 	Student.hasMany(Post, {
-	// 		onDelete: "cascade"
-	// 	});
-	// }
-	// //REPORT
-	// Student.associate = function(models) {
-	// 	Student.hasMany(Report, {
-	// 		onDelete: "cascade"
-	// 	});
-	// }
-	// //ASSESSMENT
-	// Student.associate = function(models) {
-	// 	Student.hasMany(Assessment, {
-	// 		onDelete: "cascade"
-	// 	});
-	// }
+	//Student must belong to a family
+	Student.associate = function(models) {
+		Student.belongsTo(models.Family, {
+      foreignKey: {
+      	//student cannot be created without a family
+        allowNull: false
+      }
+    });
+	};
+	//POST
+	Student.associate = function(models) {
+		Student.hasMany(models.Post, {
+			onDelete: "cascade"
+		});
+	}
+	//REPORT
+	Student.associate = function(models) {
+		console.log(models)
+		Student.hasMany(models.Report, {
+			onDelete: "cascade"
+		});
+	}
+	//ASSESSMENT
+	Student.associate = function(models) {
+		Student.hasMany(models.Assessment, {
+			onDelete: "cascade"
+		});
+	}
 
 	return Student;
 };

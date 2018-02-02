@@ -1,3 +1,20 @@
+var db = require('../models');
+
+module.exports = function(app) {
+
+  app.get("/api/students/:id", function(req, res){
+    // Find one Student with the id in req.params.id and return them to the user with res.json
+    db.Student.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbStudent){
+      res.json(dbStudent)
+    })
+  });
+};
+
+
 /*
 var db = require("../models");
 

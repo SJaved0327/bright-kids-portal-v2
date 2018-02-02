@@ -9,28 +9,28 @@ module.exports = function(sequelize, DataTypes) {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  family_last: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  family_email: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [5]
+	  			len: [5, 30]
 	  		}
 	  	},
 	  family_pw: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [8]
+	  			len: [8, 8]
 	  		}
 	  	},
 	  active: {
@@ -41,21 +41,21 @@ module.exports = function(sequelize, DataTypes) {
 	  	type: DataTypes.STRING,
 	  		allowNull: true,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  parent2_last: {
 	  	type: DataTypes.STRING,
 	  		allowNull: true,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  parent2_email: {
 	  		type: DataTypes.STRING,
 	  		allowNull: true,
 	  		validate: {
-	  			len: [5]
+	  			len: [5, 30]
 	  		}
 	  	}
 	});

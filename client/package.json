@@ -1,22 +1,14 @@
 {
-<<<<<<< HEAD
-  "name": "brightkids",
-=======
   "name": "mern",
->>>>>>> d9c5d413a9af9a42253f8c8ae72de44293e0441b
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:8080/",
   "dependencies": {
     "axios": "^0.16.2",
     "react": "^16.0.0",
-<<<<<<< HEAD
-    "react-dom": "^16.0.0",
-=======
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.0.0",
     "react-icons": "^2.2.7",
->>>>>>> d9c5d413a9af9a42253f8c8ae72de44293e0441b
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.14"
   },

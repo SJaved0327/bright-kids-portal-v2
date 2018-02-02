@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-	var Assessment = sequelize.define("Report", {
+	var Assessment = sequelize.define("Assessment", {
 		session_observations: {
 			type: DataTypes. TEXT,
 			allowNull: false,

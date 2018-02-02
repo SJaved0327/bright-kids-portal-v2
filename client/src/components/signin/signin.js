@@ -23,7 +23,7 @@ class SignIn extends React.Component {
 			<div className="formDiv card" style={styles.formDiv}>
 				<form>
 					<h3>Sign In</h3>
-					<img src="../../../public/logo.png" width="150px" height="75px" alt="bright kids logo"/>
+					<img src="./logo.png" width="150px" height="75px" alt="bright kids logo"/>
 
 					<div className="form-group" style={styles.formGroup}>
 						<label for="emailInput" style={styles.label}>Email address:</label>

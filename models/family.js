@@ -58,6 +58,8 @@ module.exports = function(sequelize, DataTypes) {
 	  			len: [5, 30]
 	  		}
 	  	}
+	}, {
+		tableName: "families"
 	});
 	//associate Family with Students
 	Family.associate = function(models) {

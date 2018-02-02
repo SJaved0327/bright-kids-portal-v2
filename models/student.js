@@ -1,10 +1,3 @@
-// var Family = require("../models/Family")
-// var Post = require("../models/Post")
-// var Report = require("../models/Report")
-// var Assessment = require("../models/Assessment")
-
-
-
 module.exports = function(sequelize, DataTypes) {
 
 	var Student = sequelize.define("Student", {
@@ -80,7 +73,9 @@ module.exports = function(sequelize, DataTypes) {
     	}
 	},{
 	  nowDate: DataTypes.DATE
-	})
+	},{
+		tableName: "students"
+	});
 
 	//Student must belong to a family
 	Student.associate = function(models) {

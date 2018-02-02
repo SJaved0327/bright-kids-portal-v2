@@ -28,9 +28,9 @@ app.use(express.static("client/build"));
 
 // Routes
 // =============================================================
-require("./routes/family-api-routes.js")(app);
-require("./routes/student-api-routes.js")(app);
-require("./routes/reports-api-routes.js")(app);
+require("./routes/family-api-routes")(app);
+require("./routes/student-api-routes")(app);
+require("./routes/reports-api-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

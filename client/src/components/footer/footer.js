@@ -3,7 +3,7 @@ import './footer.css'
 import React, { Component } from 'react'
 import FaPhone from 'react-icons/lib/fa/phone'
 import FaEnvelope from 'react-icons/lib/fa/envelope'
-import { Row, Col, Grid } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const buttonSize = 30;
 
@@ -12,7 +12,7 @@ class footer extends Component {
     return (
       <div>
 
-        <Grid>
+
           <hr className='footerHr' />
           <Row className='footerRow'>
             <Col xs={2}>
@@ -49,7 +49,7 @@ class footer extends Component {
 
             </Col>
           </Row>
-        </Grid>
+
       </div>
     );
   }

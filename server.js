@@ -6,6 +6,7 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const sequelize = require("sequelize");
 
 
@@ -13,9 +14,6 @@ const sequelize = require("sequelize");
 // =============================================================
 const app = express();
 const PORT = process.env.PORT || 8080;
-
-// Requiring our models for syncing
-const db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -26,11 +24,14 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // serves static assets during build
 app.use(express.static("client/build"));
 
+// Requiring our models for syncing
+const db = require("./models");
+
 // Routes
 // =============================================================
-require("./routes/family-api-routes")(app);
+// require("./routes/family-api-routes")(app);
 require("./routes/student-api-routes")(app);
-require("./routes/reports-api-routes")(app);
+// require("./routes/reports-api-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

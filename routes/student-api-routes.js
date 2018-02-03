@@ -2,8 +2,15 @@ var db = require('../models');
 
 module.exports = function(app) {
 
+  // Find all students and return them to the user with res.json
+  app.get("/api/students", function(req, res) {
+    db.Student.findAll({}).then(function(dbAuthor) {
+      res.json(dbAuthor);
+    });
+  });
+
+  // Find one Student with the id in req.params.id and return them to the user with res.json
   app.get("/api/students/:id", function(req, res){
-    // Find one Student with the id in req.params.id and return them to the user with res.json
     db.Student.findOne({
       where: {
         id: req.params.id
@@ -12,6 +19,16 @@ module.exports = function(app) {
       res.json(dbStudent)
     })
   });
+
+  // Create a Student with the data available to us in req.body
+  app.post("/api/students", function(req, res){
+    // console.log request
+    console.log(req.body);
+    db.Student.create(req.body).then(function(dbStudent) {
+      res.json(dbStudent);
+    });
+  });
+
 };
 
 

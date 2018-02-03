@@ -71,10 +71,6 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       len: [1, 100]
     	}
-	},{
-	  nowDate: DataTypes.DATE
-	},{
-		tableName: "students"
 	});
 
 	//Student must belong to a family

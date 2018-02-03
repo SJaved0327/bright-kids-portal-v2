@@ -5,7 +5,7 @@ USE brightKids_DB;
 
 CREATE TABLE families
 (
-	id int NOT NULL AUTO_INCREMENT,
+	id INT AUTO_INCREMENT NOT NULL,
 	family_first varchar(30) NOT NULL,
 	family_last varchar(30) NOT NULL,
 	family_email varchar(30) NOT NULL,
@@ -14,6 +14,7 @@ CREATE TABLE families
 	parent2_first varchar(30) DEFAULT NULL,
 	parent2_last varchar(30) DEFAULT NULL,
 	parent2_email varchar(30) DEFAULT NULL,
+	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
 
@@ -21,7 +22,7 @@ CREATE TABLE families
 
 CREATE TABLE students
 (
-	id int NOT NULL AUTO_INCREMENT,
+	id INT AUTO_INCREMENT NOT NULL,
 	student_first varchar(30) NOT NULL,
 	student_last varchar(30) NOT NULL,
 	current_grade varchar(5) NOT NULL,
@@ -32,6 +33,7 @@ CREATE TABLE students
 	account_manager varchar(30) DEFAULT NULL,
 	active BOOLEAN DEFAULT false,
 	address varchar(100) DEFAULT NULL,
+	createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (id)
 );
 
@@ -52,3 +54,13 @@ CREATE TABLE students
 -- 	address varchar(100) DEFAULT NULL,
 -- 	PRIMARY KEY (id)
 -- );
+
+## Tests
+
+
+
+
+
+
+
+

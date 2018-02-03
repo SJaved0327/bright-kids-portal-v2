@@ -57,10 +57,8 @@ module.exports = function(sequelize, DataTypes) {
 	  		validate: {
 	  			len: [5, 30]
 	  		}
-	  	}
-	}, {
-		tableName: "families"
-	});
+	  }
+	 });
 	//associate Family with Students
 	Family.associate = function(models) {
 		Family.hasMany(models.Student, {

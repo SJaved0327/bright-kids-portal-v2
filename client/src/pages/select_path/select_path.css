@@ -1,0 +1,51 @@
+.selectCircle{
+
+        width: 250px;
+        height: 250px;
+        -moz-border-radius: 250px;
+        -webkit-border-radius: 250px;
+        z-index: -1;
+        margin: 0 auto;
+        border-radius: 250px; 
+        transition: all .2s ease-in-out;
+}
+
+.selectCircle:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transform: scale(1.1); 
+
+}
+
+.viewFamily.selectCircle{
+    background: #31ace0;
+
+    
+
+}
+.registerPrograms.selectCircle{
+    background:#fedc60;
+
+}
+
+.viewFamily, .registerPrograms{
+    margin-top:20px;
+
+}
+
+.fontAwe{
+    margin-top: 65px;
+
+}
+
+.col-xs-6{
+    text-align: center;
+    align-content: center;
+
+}
+
+.iconText{
+  margin-bottom: 40px;
+  font-weight: 3000;
+
+}
+

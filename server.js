@@ -13,6 +13,7 @@ const sequelize = require("sequelize");
 // =============================================================
 const app = express();
 const PORT = process.env.PORT || 8080;
+const router = express.Router();
 
 // Requiring our models for syncing
 const db = require("./models");
@@ -23,8 +24,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
-// serves static assets during build
-app.use(express.static("client/build"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Routes
 // =============================================================
@@ -34,7 +36,7 @@ app.use(express.static("client/build"));
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });

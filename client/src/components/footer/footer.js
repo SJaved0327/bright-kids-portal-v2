@@ -3,7 +3,7 @@ import './footer.css'
 import React, { Component } from 'react'
 import FaPhone from 'react-icons/lib/fa/phone'
 import FaEnvelope from 'react-icons/lib/fa/envelope'
-import { Row, Col, Grid } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 const buttonSize = 30;
 
@@ -12,17 +12,17 @@ class footer extends Component {
     return (
       <div>
 
-        <Grid>
+
           <hr className='footerHr' />
           <Row className='footerRow'>
-            <Col xs={2}>
+            <Col md = {2} xs={12}>
 
               <span className='footerPhone footerText'>(646) 434-1084 </span>
               <br />
               <FaPhone className='faPhone' size={buttonSize} />
 
             </Col>
-            <Col xs={8}>
+            <Col md={8} xs = {12}>
               <span className='footerText socialMediaText' >Follow us on social media!</span>
 
             <div className ='allFooterButtons'>
@@ -42,14 +42,15 @@ class footer extends Component {
 
             </Col>
 
-            <Col xs={2}>
+            <Col md = {2} xs={12}>
               <span className='footerEmail footerText'>info@brightkidsnyc.com</span>
+              <br/>
               <FaEnvelope className='faEnvelope' size={buttonSize} />
 
 
             </Col>
           </Row>
-        </Grid>
+
       </div>
     );
   }

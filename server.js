@@ -9,7 +9,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const sequelize = require("sequelize");
 
-
 // Sets up the Express App
 // =============================================================
 const app = express();
@@ -46,9 +45,6 @@ db.sequelize.sync({ force: false }).then(function() {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-
-
-
 
 // Passport
 // const passport = require("./config/passport.js")(app);

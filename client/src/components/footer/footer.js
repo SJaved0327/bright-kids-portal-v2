@@ -15,14 +15,14 @@ class footer extends Component {
 
           <hr className='footerHr' />
           <Row className='footerRow'>
-            <Col xs={2}>
+            <Col md = {2} xs={12}>
 
               <span className='footerPhone footerText'>(646) 434-1084 </span>
               <br />
               <FaPhone className='faPhone' size={buttonSize} />
 
             </Col>
-            <Col xs={8}>
+            <Col md={8} xs = {12}>
               <span className='footerText socialMediaText' >Follow us on social media!</span>
 
             <div className ='allFooterButtons'>
@@ -42,8 +42,9 @@ class footer extends Component {
 
             </Col>
 
-            <Col xs={2}>
+            <Col md = {2} xs={12}>
               <span className='footerEmail footerText'>info@brightkidsnyc.com</span>
+              <br/>
               <FaEnvelope className='faEnvelope' size={buttonSize} />
 
 

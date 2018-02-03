@@ -1,8 +1,5 @@
 
-# Created by https://www.gitignore.io/api/git,node,macos,sublimetext,windows
-
-### Git ###
-*.orig
+# Created by https://www.gitignore.io/api/node,macos,windows,sublimetext,visualstudiocode
 
 ### macOS ###
 *.DS_Store
@@ -69,8 +66,6 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-Desktop/
-src/
 
 # Typescript v1 declaration files
 typings/
@@ -94,29 +89,6 @@ typings/
 .env
 
 
-### Windows ###
-# Windows thumbnail cache files
-Thumbs.db
-ehthumbs.db
-ehthumbs_vista.db
-
-# Folder config file
-Desktop.ini
-
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
-
-# Windows Installer files
-*.cab
-*.msi
-*.msm
-*.msp
-
-# Windows shortcuts
-*.lnk
-
-
-# End of https://www.gitignore.io/api/node,macos,windows
 ### SublimeText ###
 # cache files for sublime text
 *.tmlanguage.cache
@@ -149,5 +121,34 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
 
-# End of https://www.gitignore.io/api/git,node,macos,sublimetext
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+
+# End of https://www.gitignore.io/api/node,macos,windows,sublimetext,visualstudiocode

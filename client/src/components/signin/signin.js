@@ -18,6 +18,11 @@ const styles = {
 
 class SignIn extends React.Component {
 
+	handleClick(event){
+		event.preventDefault();
+		console.log("clicked!");
+	}
+
 	render(){
 		return (
 			<div className="formDiv card" style={styles.formDiv}>
@@ -35,7 +40,9 @@ class SignIn extends React.Component {
 				    <input type="password" className="form-control" name="passwordInput" placeholder="password" />
 			    </div>
 
-			    <button>Submit</button>
+			    <button
+			    	onClick={this.handleClick}
+			    >Submit</button>
 
 				</form>
 			</div>

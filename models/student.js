@@ -1,10 +1,3 @@
-// var Family = require("../models/Family")
-// var Post = require("../models/Post")
-// var Report = require("../models/Report")
-// var Assessment = require("../models/Assessment")
-
-
-
 module.exports = function(sequelize, DataTypes) {
 
 	var Student = sequelize.define("Student", {
@@ -17,56 +10,56 @@ module.exports = function(sequelize, DataTypes) {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  student_last: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 300]
 	  		}
 	  	},
 	  current_grade: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 5]
 	  		}
 	  	},
 	  grade_of_entry: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 5]
 	  		}
 	  	},
 	  dob: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [10]
+	  			len: [10, 10]
 	  		}
 	  	},
 	  gender: {
 	  		type: DataTypes.STRING,
 	  		allowNull: false,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 2]
 	  		}
 	  	},
 	  handed: {
 	  		type: DataTypes.STRING,
 	  		allowNull: true,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 5]
 	  		}
 	  	},
 	  account_manager: {
 	  		type: DataTypes.STRING,
 	  		allowNull: true,
 	  		validate: {
-	  			len: [1]
+	  			len: [1, 30]
 	  		}
 	  	},
 	  active: {
@@ -76,11 +69,9 @@ module.exports = function(sequelize, DataTypes) {
 	  address: {
       type: DataTypes.TEXT,
       allowNull: true,
-      len: [1]
+      len: [1, 100]
     	}
-	},{
-	  nowDate: DataTypes.DATE
-	})
+	});
 
 	//Student must belong to a family
 	Student.associate = function(models) {

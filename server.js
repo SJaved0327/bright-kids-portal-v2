@@ -6,6 +6,7 @@
 // =============================================================
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require("path");
 const sequelize = require("sequelize");
 
 
@@ -14,9 +15,6 @@ const sequelize = require("sequelize");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const router = express.Router();
-
-// Requiring our models for syncing
-const db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -28,11 +26,14 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+// Requiring our models for syncing
+const db = require("./models");
+
 // Routes
 // =============================================================
-// require("./routes/post-api-routes.js")(app);
-// require("./routes/author-api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+// require("./routes/family-api-routes")(app);
+require("./routes/student-api-routes")(app);
+// require("./routes/reports-api-routes")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

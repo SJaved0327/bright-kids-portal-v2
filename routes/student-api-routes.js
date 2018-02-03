@@ -29,6 +29,25 @@ module.exports = function(app) {
     });
   });
 
+  // // Create a Student with the data available to us in req.body
+  // app.post("/api/students/:id", function(req, res){
+  //   // console.log request
+  //   console.log(req.body);
+
+  //   db.Student.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   })
+  //   .updateValue({
+
+  //   })
+  //   .then(function(dbStudent){
+  //     res.json(dbStudent)
+  //   })
+
+  //update
+
 };
 
 

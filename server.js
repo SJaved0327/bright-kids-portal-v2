@@ -43,6 +43,12 @@ db.sequelize.sync({ force: false }).then(function() {
   });
 });
 
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+
+
 
 // Passport
 // const passport = require("./config/passport.js")(app);

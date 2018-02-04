@@ -14,7 +14,7 @@ class NavbarTurtle extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#home">Bright-Kids</a>
+              <a href="#home"><img src="./logo.png" width="150px" height="75px" alt="bright kids logo" /></a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>

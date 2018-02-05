@@ -6,8 +6,8 @@
 // const LocalStrategy = require("passport-local").Strategy;
 // const db = require("../models");
 // const bcrypt = require("bcryptjs");
-// const port = process.env.NODE_PORT || '' ; //only use port in DEV
-// const host = process.env.HOST;
+const port = process.env.NODE_PORT || '' ; //only use port in DEV
+const host = process.env.HOST;
 
 
 // // Configure Passport...
@@ -30,16 +30,16 @@
 
 
   var express = require('express');
-  var app = module.exports = express();
+  var app = express();
   var session = require('express-session');
   var MySQLStore = require('express-mysql-session')(session);
    
   var options = {
-      host: 'localhost',
-      port: 3306,
-      user: 'session_test',
+      host: host,
+      port: port,
+      user: 'root',
       password: '',
-      database: ' brightKids_DB'
+      database: 'brightKids_DB'
   };
    
   var sessionStore = new MySQLStore(options);

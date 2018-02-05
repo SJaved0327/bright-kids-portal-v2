@@ -3,6 +3,7 @@
 // CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO SEQUELIZE DATABSASE
 // *********************************************************************************
 
+
 var sequelize = new Sequelize("brightKids_DB", "root", "", {
 	host: "localhost",
 	dialect: "mysql",

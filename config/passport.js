@@ -9,6 +9,16 @@
 const port = process.env.NODE_PORT || '' ; //only use port in DEV
 const host = process.env.HOST;
 
+// dependencies from NPM example.
+var express = require('express');
+var app = express();
+var session = require('express-session');
+var MySQLStore = require('express-mysql-session')(session);
+var options;
+
+
+module.exports= function(app){
+
 
 // // Configure Passport...
 
@@ -28,26 +38,37 @@ const host = process.env.HOST;
 //   }));
 
 
+ if (!process.env.NODE_PORT){
 
-  var express = require('express');
-  var app = express();
-  var session = require('express-session');
-  var MySQLStore = require('express-mysql-session')(session);
-   
-  var options = {
-      host: host,
-      port: port,
-      user: 'root',
-      password: '',
-      database: 'brightKids_DB'
-  };
-   
-  var sessionStore = new MySQLStore(options);
-   
-  app.use(session({
-      key: 'session_cookie_name',
-      secret: process.env.SESSION_SECRET,
-      store: sessionStore,
-      resave: false,
-      saveUninitialized: false
-  }));
+ 
+
+options = {
+    host: 'localhost',
+    port: port,
+    user: 'root',
+    password: '',
+    database: 'brightKids_DB'
+};
+
+ } else{
+    options = {
+        host: 'localhost',
+        port: port,
+        user: 'session_test',
+        password: 'password',
+        database: 'session_test'
+    };
+    
+
+ }
+ 
+var sessionStore = new MySQLStore(options);
+ 
+app.use(session({
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false
+}))
+};

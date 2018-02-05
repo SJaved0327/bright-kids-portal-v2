@@ -3,6 +3,7 @@ module.exports = function(sequelize, DataTypes) {
 		id: {
 	      type: DataTypes.INTEGER,
           autoIncrement: true,
+          primaryKey: true,
         },
         email:{
             type: DataTypes.STRING,
@@ -21,4 +22,6 @@ module.exports = function(sequelize, DataTypes) {
 
         }
     });
+
+    return Users;
 }

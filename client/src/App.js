@@ -1,8 +1,10 @@
 //react
 import React from 'react';
 import {
-	BrowserRouter as Router, Route,
-	Switch 
+	BrowserRouter as Router, 
+	Route,
+	Switch,
+	Link
 } from "react-router-dom";
 //assets
 import './App.css';
@@ -13,6 +15,7 @@ import NavbarTurtle from './components/navbar';
 import LogIn from './pages/LogIn';
 import NoMatch from './pages/NoMatch';
 import select_path from './pages/select_path'
+//import ViewFamily from './pages/ViewFamily'
 
 const App = () =>
 	<Router>
@@ -22,6 +25,11 @@ const App = () =>
 			<Switch>
 				<Route exact path="/" component={LogIn} />
 				<Route exact path = "/select_path" component={select_path}/>
+
+				{/* 
+				<Route path = "/view_family" component={ViewFamily}/>
+				*/}
+
 				<Route component={NoMatch} /> 
 			</Switch>
 			

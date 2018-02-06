@@ -28,6 +28,7 @@ const App = () =>
 
 				{/* 
 				<Route path = "/view_family" component={ViewFamily}/>
+				testing
 				*/}
 
 				<Route component={NoMatch} /> 

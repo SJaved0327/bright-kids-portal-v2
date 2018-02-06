@@ -18,6 +18,7 @@ class NavbarTurtle extends Component {
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
+          <Button bsStyle="success">Portal</Button>
             <NavItem eventKey={1} href="#">
               Portal
     </NavItem>

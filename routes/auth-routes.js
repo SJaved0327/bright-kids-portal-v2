@@ -5,6 +5,12 @@ const router = express.Router();
 module.exports = function(passport){
 
   app.get("/auth/signin", function(req,res){
+    
+    var username = req.username;
+    var password = req.password;
+    console.log(`username: ${username}`);
+    console.log(`password: ${password}`);
+    
     res.json({"signin response received!":"signin"})
   });
 

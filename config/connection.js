@@ -8,11 +8,11 @@ var sequelize = new Sequelize("brightKids_DB", "root", "", {
 	host: "localhost",
 	dialect: "mysql",
 	pool: {
-	  max: 5,
-	  min: 0,
-	  idle: 10000
+		max: 5,
+		min: 0,
+		idle: 10000
 	}
-  });
+});
 
 
 

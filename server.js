@@ -25,6 +25,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+const passport = require('./config/passport')(app)
+
 // Requiring our models for syncing
 const db = require("./models");
 

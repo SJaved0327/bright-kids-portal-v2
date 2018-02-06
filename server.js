@@ -36,11 +36,8 @@ require("./routes/student-api-routes")(app);
 
 // Authentication 
 // ===============================================================
-const bcrypt = require("bcrypt")
-const passport = require("./config/passport.js")(app);
 const authRoutes = require("./routes/auth-routes")(passport);
 app.use("/auth", authRoutes);
-
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================

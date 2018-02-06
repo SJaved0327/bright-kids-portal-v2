@@ -5,16 +5,39 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import API from "../../utils/APIstudents"
 
 //components
+
+
 //import student buttons
 
 class ViewFamily extends React.Component {
 	state = {
-
+		students: "",
+		number: "2"
 	};
 
-	
+	constructor(){
+		super();
+		this.loadStudents = this.loadStudents.bind(this);
+	}
+	//when component mounts, load student data
+	componentDidMount() {
+		this.loadStudents();
+	}
+
+	//load student data from database
+	loadStudents = () => {
+		
+		API.getStudentById()
+			.then(res =>
+				this.setState({
+					students: res.data
+				})
+			)
+			.catch(err => console.log(err));
+	};
 
 	render(){
 		return(
@@ -33,10 +56,6 @@ class ViewFamily extends React.Component {
 							</div>
 							{/* container to hold student buttons */}
 							<div className="col-lg-8">
-								<h3><Link to="view_family/{zillow-group}">Zillow Group</Link></h3>
-
-
-								<Route path="/view_family/:id" component={Child}/>
 							</div>
 							{/* built-in margin*/}
 							<div className="col-lg-2">
@@ -56,10 +75,10 @@ class ViewFamily extends React.Component {
 	}
 }
 
-const Child = ({ match }) => (
-  <div>
-    <h3>Studet ID #{match.params.id}</h3>
-  </div>
-)
+// const Child = ({ match }) => (
+//   <div>
+//     <h3>Studet ID #{match.params.id}</h3>
+//   </div>
+// )
 
 export default ViewFamily;

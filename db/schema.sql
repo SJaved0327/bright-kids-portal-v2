@@ -37,25 +37,6 @@ CREATE TABLE students
 	PRIMARY KEY (id)
 );
 
--- ## students table
-
--- CREATE TABLE students
--- (
--- 	id int NOT NULL AUTO_INCREMENT,
--- 	student_first varchar(30) NOT NULL,
--- 	student_last varchar(30) NOT NULL,
--- 	current_grade varchar(5) NOT NULL,
--- 	grade_of_entry varchar(5) NOT NULL,
--- 	dob varchar(10) NOT NULL,
--- 	gender varchar(2) NOT NULL,
--- 	handed varchar(5) DEFAULT NULL,
--- 	account_manager varchar(30) DEFAULT NULL,
--- 	active BOOLEAN DEFAULT false,
--- 	address varchar(100) DEFAULT NULL,
--- 	PRIMARY KEY (id)
--- );
-
-## Tests
 
 
 

@@ -15,7 +15,7 @@ import NavbarTurtle from './components/navbar';
 import LogIn from './pages/LogIn';
 import NoMatch from './pages/NoMatch';
 import select_path from './pages/select_path'
-//import ViewFamily from './pages/ViewFamily'
+//import ViewFamily from './pages/ViewFamily'//
 
 const App = () =>
 	<Router>

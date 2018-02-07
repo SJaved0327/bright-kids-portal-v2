@@ -5,13 +5,15 @@ var db = require('../models');
 // =====================================================
 module.exports = function(app) {
 
+
   // GET
   // Find all students
   app.get("/api/students", function(req, res) {
     db.Student.findAll({})
       .then(function(dbStudent) {
+
         res.json(dbStudent);
-        //console.log(dbStudent);
+
       });
   });
 

@@ -20,12 +20,7 @@ class NavbarTurtle extends Component {
           </Navbar.Header>
           <Nav>
           <Button bsStyle="success">Portal</Button>
-            <NavItem eventKey={1} href="#">
-              Portal
-    </NavItem>
-            <NavItem eventKey={2} href="#">
-              Registration
-    </NavItem>
+          <Button bsStyle="danger">Registration</Button>
             <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>

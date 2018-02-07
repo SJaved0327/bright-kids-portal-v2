@@ -36,10 +36,7 @@ const db = require("./models");
 require("./routes/student-api-routes")(app);
 // require("./routes/reports-api-routes")(app);
 
-// Authentication 
-// ===============================================================
-const authRoutes = require("./routes/auth-routes")(passport);
-app.use("/auth", authRoutes);
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -48,6 +45,11 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
   });
 });
+
+// Authentication 
+// ===============================================================
+const authRoutes = require("./routes/auth-routes")(passport);
+app.use("/auth", authRoutes);
 
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));

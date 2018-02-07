@@ -1,3 +1,4 @@
+require('dotenv').config();
 const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
@@ -10,6 +11,7 @@ const username = process.env.HEROKUSERNAME;
 const password = process.env.HEROKUPASSWORD;
 const database = process.env.HEROKUDATABSE;
 const secret = process.env.SESSION_SECRET;
+const mysql = require("mysql")
 
 // dependencies from NPM example.
 var express = require('express');
@@ -21,13 +23,17 @@ var options;
 
 module.exports = function (app) {
 
+   console.log( process.env.NODE_ENV )
+
     // // Configure Passport...
 
-    if (!process.env.NODE_PORT) {
+    if (process.env.NODE_ENV !== "production") {
 
         //  local credentials for SequelPro or equivalent RDBMS
+        console.log("local db")
 
         options = {
+            
             host: 'localhost',
             port: 3306,
             user: 'root',
@@ -37,6 +43,7 @@ module.exports = function (app) {
 
     } else {
         //  JAWSDB credentials
+        console.log("JAWS db")
         options = {
             host: host,
             port: port,
@@ -48,11 +55,13 @@ module.exports = function (app) {
 
     }
 
-
     var sessionStore = new MySQLStore(options);
 
+    var connection = mysql.createConnection(options);
+
+    console.log(options)
+
     app.use(session({
-        key: 'session_cookie_name',
         secret: secret,
         store: sessionStore,
         resave: false,

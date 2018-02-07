@@ -4,7 +4,7 @@ const router = express.Router();
 
 module.exports = function(passport){
 
-  app.get("/auth/signin", function(req,res){
+  app.post("/auth/signin", function(req,res){
     
     var username = req.username;
     var password = req.password;

@@ -1,9 +1,12 @@
-//require models
+// Require models
 var db = require('../models');
 
+// Routes
+// =====================================================
 module.exports = function(app) {
 
-  // Find all students and return them to the user with res.json
+  // GET
+  // Find all students
   app.get("/api/students", function(req, res) {
     db.Student.findAll({})
       .then(function(dbStudent) {
@@ -12,9 +15,9 @@ module.exports = function(app) {
       });
   });
 
+  // GET
   // Find one Student with the id in req.params.id and return them to the user with res.json
   app.get("/api/students/:id", function(req, res){
-    
 
     db.Student.findOne({
       where: {

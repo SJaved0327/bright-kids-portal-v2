@@ -4,7 +4,7 @@ const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const LocalStrategy = require("passport-local").Strategy;
-const db = require("../models");
+var db = require("../models");
 const bcrypt = require("bcrypt");
 
 //only used in DEV

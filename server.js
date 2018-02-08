@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
 const passport = require('./config/passport')(app)
 
 // Requiring our models for syncing
-const db = require("./models");
+var db = require("./models");
 
 // Routes
 // =============================================================

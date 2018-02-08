@@ -20,7 +20,8 @@ class SignIn extends React.Component {
 
 	handleClick(event){
 		event.preventDefault();
-		console.log("clicked!");
+		console.log(window.location.href);
+		return 
 	}
 
 	render(){
@@ -42,6 +43,7 @@ class SignIn extends React.Component {
 
 			    <button
 			    	onClick={this.handleClick}
+
 			    >Submit</button>
 
 				</form>

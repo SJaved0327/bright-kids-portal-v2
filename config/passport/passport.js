@@ -4,8 +4,7 @@ const passport = require("passport");
 const FacebookStrategy = require("passport-facebook").Strategy;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const LocalStrategy = require("passport-local").Strategy;
-var db = require("../models");
-const bcrypt = require("bcrypt");
+var db = require("../../models");
 
 //only used in DEV
 const port = process.env.HEROKUPORT;

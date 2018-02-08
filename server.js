@@ -4,6 +4,7 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -25,7 +26,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const passport = require('./config/passport')(app)
+const passport = require('./config/passport/passport')(app)
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -46,13 +47,28 @@ db.sequelize.sync({ force: false }).then(function() {
   });
 });
 
+app.use(passport.initialize());
+
 // Authentication 
 // ===============================================================
 const authRoutes = require("./routes/auth-routes")(passport);
 app.use("/auth", authRoutes);
 
+// load passport strategies
+const localSignupStrategy = require('./config/passport/local-signup');
+const localLoginStrategy = require('./config/passport/local-login');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
+
+
+if (process.env.NODE_ENV === "production") {
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+}
 
-
+if (process.env.NODE_ENV === "development") {
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
+}

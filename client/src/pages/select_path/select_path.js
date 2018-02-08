@@ -1,7 +1,16 @@
+// react
 import React, { Component } from "react";
+// react-router
 import {
     Link
 } from "react-router-dom";
+// host_pages
+
+// pages
+
+// components 
+
+// assets
 import { Row, Col } from 'react-bootstrap';
 import FaGraduationCap from 'react-icons/lib/fa/graduation-cap'
 import FaGroup from 'react-icons/lib/fa/group'

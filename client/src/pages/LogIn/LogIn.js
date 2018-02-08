@@ -1,9 +1,8 @@
 //react
 import React from 'react';
-//assets
-
 //components
 import SignIn from '../../components/signin'
+//assets
 
 const LogIn = () =>
 	<div className="container-fluid">

@@ -6,7 +6,7 @@ import React from 'react';
 import Footer from './components/footer';
 import NavbarTurtle from './components/navbar';
 //pages
-import Main from './pages/Main';
+import Main from './host_pages/Main';
 
 const App = () => (
 		<div>

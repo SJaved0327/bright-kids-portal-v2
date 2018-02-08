@@ -2,7 +2,8 @@
 import React from 'react';
 import {
   Route,
-  Switch
+  Switch,
+  Link
 } from 'react-router-dom';
 //components
 import listStudents from '../../components/listStudents';
@@ -22,6 +23,7 @@ const ViewFamily = () => (
 		</div>
 
 		<div className="container">
+
 			<div className="row">
 				{/* built-in margin*/}
 				<div className="col-lg-2">
@@ -40,13 +42,17 @@ const ViewFamily = () => (
 				<div className="col-lg-2">
 				</div>
 			</div>
+
 			{/* row for buttons */}
 			<div className="row">
 				<div className="col-lg-12">
 					<button>Policies</button>
-					<button>Edit Contact Info</button>
+					<Link to="/view_family/contact" className="text-align-center">
+						<button>Edit Contact Info</button>
+					</Link>
 				</div>
 			</div>
+			
 		</div>
 
 	</div>

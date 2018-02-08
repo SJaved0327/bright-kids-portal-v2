@@ -9,7 +9,7 @@ module.exports = function(app) {
     });
   });
 
-  // Find one Parent ID with the id in req.params.id and return them to the user with res.json
+  // Find Parent ID with the id in req.params.id and return them to the user with res.json
   app.get("/api/parents/:id", function(req, res){
     db.Parents.findOne({
       where: {
@@ -20,7 +20,7 @@ module.exports = function(app) {
     })
   });
 
-  // Create a Student with the data available to us in req.body
+  // Create Parents ID with the data available to us in req.body
   app.post("/api/parents", function(req, res){
     // console.log request
     console.log(req.body);

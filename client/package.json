@@ -1,5 +1,4 @@
-{
-    "name": "mern",
+{"name": "mern",
     "version": "0.1.0",
     "private": true,
     "proxy": "http://localhost:8080/",
@@ -19,4 +18,3 @@
       "eject": "react-scripts eject"
     }
   }
-  

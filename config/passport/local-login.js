@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt")
 /**
  * Return the Passport Local Strategy object.
  */
+
 module.exports = new PassportLocalStrategy({
     usernameField: 'email',
     passwordField: 'password',
@@ -20,34 +21,36 @@ module.exports = new PassportLocalStrategy({
             { email: email }
     }).then(returnedUser => {
         if (returnedUser == null) {
-            const error = new Error('Incorrect email or password');
+            const error = new Error('No user with that email exists');
             error.type = 'Incorrect credentials error';
-
             return done(error);
         }
-
         console.log(returnedUser);
+        var hash = returnedUser.password;
 
-        // check if a hashed user's password is equal to a value saved in the database
-        if (password == returnedUser.password) {
+        // check if a hashed user's password is equal to the password input by the user
 
+        bcrypt.compare(password, hash).then(function (res) {
 
-            const payload = {
-                sub: returnedUser
-            };
+            if (res) {
 
-            // create a token string
-            const token = jwt.sign(payload, process.env.SESSION_SECRET);
+                const payload = {
+                    sub: returnedUser
+                };
 
-            return done(null, token);
-        } else {
+                // create a token string
+                const token = jwt.sign(payload, process.env.SESSION_SECRET);
 
-            const error = new Error('Incorrect email or password');
-            error.name = 'IncorrectCredentialsError';
+                return done(null, token);
 
-            return done(error);
-        }
+            } else {
 
+                const error = new Error('Incorrect email or password');
+                error.name = 'IncorrectCredentialsError';
+
+                return done(error);
+            }
+        });
 
     })
 });

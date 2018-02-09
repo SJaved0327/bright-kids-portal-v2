@@ -13,17 +13,21 @@ module.exports = new PassportLocalStrategy({
 }, (req, email, password, done) => {
 
     var email = email.trim();
-    var password = password.trim()
+    var password = password.trim();
+    var hash = bcrypt.hashSync(password, 10);
+    console.log(hash);
 
     db.Users.findOne({
         where: { email: email },
     }).then(returnedUser => {
 
         if (returnedUser == null) {
+            // encrypts password
+           
 
             db.Users.create({
                 email: email,
-                password: password
+                password: hash
             })
 
                 .then(created => {

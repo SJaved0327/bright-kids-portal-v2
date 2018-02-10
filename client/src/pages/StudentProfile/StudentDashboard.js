@@ -21,9 +21,6 @@ const arrowSize = 50;
 
 class StudentDashboard extends React.Component {
 
-
-
-
 	render(){
 		return (
 			<div>

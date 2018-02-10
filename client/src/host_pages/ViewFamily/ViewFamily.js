@@ -21,8 +21,9 @@ const ViewFamily = () => (
 	<div>
 		<Switch>
 			<Route exact path='/view_family' component={ListStudents} />
-			<Route path ='/view_family/:id' component={StudentDashboard} />
 			<Route path='/view_family/contact' component={ParentContact} />
+			<Route path ='/view_family/:id' component={StudentDashboard} />
+			
 		</Switch>
 	</div>
 

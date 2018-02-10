@@ -4,11 +4,11 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const sequelize = require("sequelize");
-
 
 // Sets up the Express App
 // =============================================================
@@ -26,8 +26,10 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+const passport = require('./config/passport/passport')(app)
+
 // Requiring our models for syncing
-const db = require("./models");
+var db = require("./models");
 
 // Routes
 // =============================================================
@@ -35,10 +37,12 @@ const db = require("./models");
 require("./routes/student-api-routes")(app);
 // require("./routes/reports-api-routes")(app);
 
-// handle every oher route with index.html, which will contain a script tag to the apps JS files
+
+// handle every other route with index.html, which will contain a script tag to the apps JS files
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
@@ -49,13 +53,29 @@ db.sequelize.sync({ force: false }).then(function() {
 });
 
 
+app.use(passport.initialize());
 
 
+// Authentication 
+// ===============================================================
+const authRoutes = require("./routes/auth-routes")(passport);
+app.use("/auth", authRoutes);
+
+// load passport strategies
+const localSignupStrategy = require('./config/passport/local-signup');
+const localLoginStrategy = require('./config/passport/local-login');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
 
 
-// Passport
-// const passport = require("./config/passport.js")(app);
+if (process.env.NODE_ENV === "production") {
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+}
 
-//Routes goes here
-// const passportRoute = require("./routes/pass-routes.js")(passport);
-
+if (process.env.NODE_ENV === "development") {
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/public/index.html"));
+  });
+}

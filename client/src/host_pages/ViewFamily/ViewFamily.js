@@ -9,7 +9,7 @@ import {
 // host_pages
 
 //pages
-import StudentProfile from '../../pages/StudentProfile';
+import StudentDashboard from '../../pages/StudentDashboard';
 import ParentContact from '../../pages/ParentContact';
 //components
 import ListStudents from '../../components/ListStudents';
@@ -21,7 +21,7 @@ const ViewFamily = () => (
 	<div>
 		<Switch>
 			<Route exact path='/view_family' component={ListStudents} />
-			<Route path ='/view_family/:id' component={StudentProfile} />
+			<Route path ='/view_family/:id' component={StudentDashboard} />
 			<Route path='/view_family/contact' component={ParentContact} />
 		</Switch>
 	</div>

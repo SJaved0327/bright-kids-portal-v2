@@ -19,7 +19,7 @@ import RightPageArrow from '../../components/RightPageArrow'
 
 const arrowSize = 50;
 
-const StudentProfile = () => (
+const StudentDashboard = () => (
 		<div>
 
 			<Jumbotron 
@@ -118,4 +118,4 @@ const StudentProfile = () => (
 			
 	)
 
-export default StudentProfile; 
+export default StudentDashboard; 

@@ -1,41 +1,19 @@
 //react
 import React from 'react';
-import {
-	BrowserRouter as Router, 
-	Route,
-	Switch,
-	Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 //assets
-import './App.css';
+
 //components
-import Footer from './components/footer';
-import NavbarTurtle from './components/navbar';
+
 //pages
-import LogIn from './pages/LogIn';
-import NoMatch from './pages/NoMatch';
-import select_path from './pages/select_path'
-//import ViewFamily from './pages/ViewFamily'//
+import Main from './host_pages/Main';
 
-const App = () =>
+const App = () => (
 	<Router>
-		<div>
-			<NavbarTurtle />
+    	{/*  main application will be rendered here  */}
+      <Main />
+  </Router>
+)
 
-			<Switch>
-				<Route exact path="/" component={LogIn} />
-				<Route exact path = "/select_path" component={select_path}/>
-
-				{/* Commenting out
-				<Route path = "/view_family" component={ViewFamily}/>
-				testing
-				*/}
-
-				<Route component={NoMatch} /> 
-			</Switch>
-			
-			<Footer />
-		</div>
-	</Router>;
 
 export default App;

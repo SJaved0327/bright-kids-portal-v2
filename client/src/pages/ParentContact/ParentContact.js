@@ -33,7 +33,7 @@ class ParentContact extends React.Component {
 								{/* if currently on /view_family/:id, left arrow should take user to invoices */}
 								<LeftPageArrow 
 									to="/view_family"
-									size="50px"
+									size={arrowSize}
 								/>
 							</div>
 

@@ -26,7 +26,7 @@ const App = () =>
 				<Route exact path="/" component={LogIn} />
 				<Route exact path = "/select_path" component={select_path}/>
 
-				{/* 
+				{/* Commenting out
 				<Route path = "/view_family" component={ViewFamily}/>
 				testing
 				*/}

@@ -10,7 +10,7 @@ import Main from './host_pages/Main';
 
 const App = () => (
 	<Router>
-    	{/* main applicaiton will be rendered here */}
+    	{/*  main application will be rendered here  */}
       <Main />
   </Router>
 )

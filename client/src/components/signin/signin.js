@@ -21,7 +21,6 @@ class SignIn extends React.Component {
 	handleClick(event){
 		event.preventDefault();
 		console.log(window.location.href);
-		return 
 	}
 
 	render(){
@@ -41,10 +40,8 @@ class SignIn extends React.Component {
 				    <input type="password" className="form-control" name="passwordInput" placeholder="password" />
 			    </div>
 
-			    <button
-			    	onClick={this.handleClick}
 
-			    >Submit</button>
+			    <a href="/select_path"><button onClick={this.handleClick}>Submit</button></a>
 
 				</form>
 			</div>

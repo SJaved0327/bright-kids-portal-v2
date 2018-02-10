@@ -7,7 +7,7 @@ import { Row, Col } from 'react-bootstrap';
 
 const buttonSize = 30;
 
-class footer extends Component {
+class Footer extends Component {
   render() {
     return (
       <div>
@@ -56,4 +56,4 @@ class footer extends Component {
   }
 }
 
-export default footer;
+export default Footer;

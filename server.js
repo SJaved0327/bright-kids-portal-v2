@@ -35,6 +35,11 @@ const db = require("./models");
 require("./routes/student-api-routes")(app);
 // require("./routes/reports-api-routes")(app);
 
+// handle every oher route with index.html, which will contain a script tag to the apps JS files
+app.get("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 db.sequelize.sync({ force: false }).then(function() {
@@ -43,9 +48,7 @@ db.sequelize.sync({ force: false }).then(function() {
   });
 });
 
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+
 
 
 

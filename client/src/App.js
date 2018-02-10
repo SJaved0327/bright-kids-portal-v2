@@ -1,20 +1,19 @@
 //react
 import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 //assets
 
 //components
-import Footer from './components/footer';
-import NavbarTurtle from './components/navbar';
+
 //pages
 import Main from './host_pages/Main';
 
 const App = () => (
-		<div>
-			<NavbarTurtle />
-			{/* This is where our app will be rendered */}
-			<Main />
-			<Footer />
-		</div>
+	<Router>
+    	{/* main applicaiton will be rendered here */}
+      <Main />
+  </Router>
 )
+
 
 export default App;

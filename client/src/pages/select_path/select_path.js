@@ -31,11 +31,11 @@ class select_path extends Component {
 
                 <span className ='iconText'> View Family</span>
 
-                <Link to={"/view_family"}>
+                <a href="/view_family">
                     <div className ='viewFamily selectCircle'>
                     <FaGroup size={buttonSize} className = 'fontAwe'/>
                     </div>
-                </Link>
+                </a>
 
                 </Col>
 
@@ -43,11 +43,11 @@ class select_path extends Component {
                 <Col  md = {6} xs={12} >
                 <span className ='iconText'> Register for Programs</span>
 
-                <Link to={"/register_programs"}>
+                <a href="/register_programs">
                     <div className ='registerPrograms selectCircle'>
                     <FaGraduationCap size={buttonSize} className = 'fontAwe' />
                     </div>
-                </Link>
+                </a>
 
                 </Col>
 

@@ -4,17 +4,6 @@ var db = require("../models")
 
 module.exports = function(passport){
 
-  // router.post("/signin",
-  // passport.authenticate("local-login",
-
-  //   function(req, res){
-
-  //       req.session.save(function(){
- 
-  //       })
-  //     })
-
-  // )
   router.post('/signin', function(req, res, next) {
     passport.authenticate('local-login', function(err, user, info) {
       if (err) { return next(err); }

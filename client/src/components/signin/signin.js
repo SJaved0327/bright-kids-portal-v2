@@ -31,7 +31,7 @@ class SignIn extends Component {
 		};
 
 		// This binding is necessary to make `this` work in the callback
-		this.handleClick = this.handleClick.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 
@@ -39,6 +39,7 @@ class SignIn extends Component {
 
 
 	}
+	
 
 	 handleEmailChange (event){
 		this.setState({ 
@@ -52,20 +53,17 @@ class SignIn extends Component {
 		});
 	}
 
-	 handleClick  (event){
+	 handleSubmit (event){
 		event.preventDefault();
-		var email = event.target.value;
-		var password = event.target.value;
 
-		console.log(email);
-		console.log(password)
-
+		var email = event.target.emailInput.value;
+		var password = event.target.passwordInput.value;
 
 		function logInAttempt(query) {
 			return axios.post(window.location.href + "auth/signin", {
 
-				"email": `${email}`,
-				"password": `${password}`
+				"email": email,
+				"password": password
 
 			}).then(function (response) {
 				console.log("response received!")
@@ -83,7 +81,7 @@ class SignIn extends Component {
 	render() {
 		return (
 			<div className="formDiv card" style={styles.formDiv}>
-				<form>
+				<form onSubmit={this.handleSubmit}>
 					<h3>Sign In</h3>
 					<img src="./logo.png" width="150px" height="75px" alt="bright kids logo" />
 
@@ -97,10 +95,7 @@ class SignIn extends Component {
 						<input type="password" className="form-control" name="passwordInput" placeholder="password" value={this.state.value} onChange={this.handlePasswordChange}/>
 					</div>
 					
-					<button
-						onClick={this.handleClick}
-
-					>Submit</button>
+					<input type="submit" value="Submit" />
 
 				</form>
 			</div>

@@ -10,7 +10,7 @@ module.exports = function(passport){
       if (!user) { return res.status(403).send("Not logged in."); }
       req.logIn(user, function(err) {
         if (err) { return next(err); }
-        return res.json({signedIn: true});
+        return res.redirect('/select_path');
       });
     })(req, res, next);
   });

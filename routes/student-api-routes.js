@@ -2,6 +2,16 @@ var db = require('../models');
 
 module.exports = function(app) {
 
+  app.get("/*", function (req, res) {
+    if (req.isAuthenticated()) {
+      next();
+    } else {
+      res.redirect("/");
+    }
+
+  });
+
+
   // Find all students and return them to the user with res.json
   app.get("/api/students", function(req, res) {
     db.Student.findAll({}).then(function(dbAuthor) {

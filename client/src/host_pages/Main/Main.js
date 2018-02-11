@@ -11,7 +11,7 @@ import NoMatch from '../../pages/NoMatch';
 import select_path from '../../pages/select_path';
 // components
 import NavbarTurtle from '../../components/navbar';
-import Footer from '../../components/Footer';
+import Footer from '../../components/footer';
 // assets
 
 

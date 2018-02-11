@@ -75,7 +75,12 @@ module.exports = function (app) {
 
 
 
-    var sessionStore = new MySQLStore(options);
+    var sessionStore = new MySQLStore(options, function() {
+        
+            // Session store callback to clear expired sessions from sessions table
+            sessionStore.setExpirationInterval()
+        
+        });
 
     var connection = mysql.createConnection(options);
 

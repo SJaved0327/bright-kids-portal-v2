@@ -27,6 +27,8 @@ const style = {
 	}
 }
 
+const arrowSize = 50;
+
 class ListStudents extends React.Component {
 	
 	state = {
@@ -77,7 +79,7 @@ class ListStudents extends React.Component {
 				              <div className="studentRow">
 				              	<div>
 					                <h2 key={student.id} className="studentName">{student.student_first} {student.student_last} </h2>
-						              <h4 className="studentView"> View Student Profile <FaArrowCircleORight className="fontAwe" /></h4>
+						              <h4 className="studentView"> View Student Profile <Link to={"/view_family/" + student.id}><FaArrowCircleORight size={arrowSize} className="fontAwe" /></Link></h4>
 					              </div>
 				              </div>
 				            ))}

@@ -16,9 +16,21 @@ import LeftPageArrow from '../../components/LeftPageArrow'
 import RightPageArrow from '../../components/RightPageArrow'
 
 // assets
+const style = {
+	jumbotron: {
+		background: "#fedc60"
+	}
+}
+
 
 const StudentInvoices = () => (
-	<h3>StudentInvoices</h3>
+	<div>
+		<Jumbotron 
+			display="Students In Your Family"
+			style={style.jumbotron}
+		/>
+
+	</div>
 );
 
 export default StudentInvoices;

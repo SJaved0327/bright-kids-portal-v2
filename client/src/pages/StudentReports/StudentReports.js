@@ -17,8 +17,8 @@ import RightPageArrow from '../../components/RightPageArrow'
 
 // assets
 
-const StudentReports = () => {
+const StudentReports = () => (
 	<h3>StudentReports</h3>
-};
+);
 
 export default StudentReports;

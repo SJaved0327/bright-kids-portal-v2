@@ -9,10 +9,7 @@ import {
 // host_pages
 
 //pages
-import StudentProfile from '../../pages/StudentProfile';
-import StudentEvaluations from '../../pages/StudentEvaluations';
-import StudentInvoices from '../../pages/StudentInvoices';
-import StudentReports from '../../pages/StudentReports';
+import StudentDashboard from '../StudentDashboard';
 import ParentContact from '../../pages/ParentContact';
 
 //components
@@ -25,10 +22,7 @@ const ViewFamily = () => (
 	<div>
 		<Switch>
 			<Route exact path='/view_family' component={ListStudents} />
-			<Route path ='/view_family/:id' component={StudentProfile} />
-			<Route path ='/view_family/:id/evaluations' component={StudentEvaluations} />
-			<Route path ='/view_family/:id/invoices' component={StudentInvoices} />
-			<Route path ='/view_family/:id/reports' component={StudentReports} />
+			<Route path ='/view_family/:id' component={StudentDashboard} />
 			<Route path='/view_family/contact' component={ParentContact} />
 			
 			

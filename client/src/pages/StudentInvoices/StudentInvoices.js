@@ -17,8 +17,8 @@ import RightPageArrow from '../../components/RightPageArrow'
 
 // assets
 
-const StudentInvoices = () => {
+const StudentInvoices = () => (
 	<h3>StudentInvoices</h3>
-};
+);
 
 export default StudentInvoices;

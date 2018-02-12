@@ -11,7 +11,7 @@ import NoMatch from '../../pages/NoMatch';
 import select_path from '../../pages/select_path';
 // components
 import NavbarTurtle from '../../components/navbar';
-import Footer from '../../components/footer';
+import footer from '../../components/footer';
 // assets
 
 
@@ -29,7 +29,7 @@ const Main = () => (
 		  <Route component={NoMatch} />
 		</Switch>
 
-		<Footer />
+		<footer />
 
 	</div>
 )

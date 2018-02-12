@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react'
-import axios from "axios"
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 const styles = {
@@ -67,13 +68,14 @@ class SignIn extends Component {
 
 			}).then(function (response) {
 				console.log("response received!")
-				// return axios.get( '/select_path');
+				return true;
 				
 			})
 
 		} return logInAttempt()
 
-	}
+	} 
+	
 
 
 
@@ -97,7 +99,7 @@ class SignIn extends Component {
 						<input type="password" className="form-control" name="passwordInput" placeholder="password" value={this.state.value} onChange={this.handlePasswordChange}/>
 					</div>
 					
-					<input type="submit" value="Submit" />
+					<Link to="/select_path"> <input type="submit" value="Submit" /></Link>
 
 				</form>
 			</div>

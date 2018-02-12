@@ -13,7 +13,7 @@
 	border-radius: 25px;
   border: 2px solid #A9A9A9;
   padding: 20px;
-  width: 75%;
+  width: 80%;
   height: 100px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -23,10 +23,12 @@
 
 .studentName {
 	float: left;
+	margin-right: 0px;
 }
 
 .studentView {
 	float: right;
+	margin-left: 0px;
 }
 
 .studentButton {

@@ -10,7 +10,7 @@ import {
 // components
 import Jumbotron from '../Jumbotron'
 //assets
-import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-o-right'
+import FaArrowCircleORight from 'react-icons/lib/fa/arrow-circle-o-right'
 import './ListStudents.css'
 
 // utils
@@ -76,15 +76,8 @@ class ListStudents extends React.Component {
 				            {this.state.students.map(student => (
 				              <div className="studentRow">
 				              	<div>
-					                <h2 key={student.id} className="studentName">
-					                	{student.student_first} {student.student_last}
-					                </h2>
-					                <h4 className="studentView">
-					                	View Profile Page
-						                <Link to={"/view_family/" + student.id}>
-						                   <FaArrowCircleRight className="fontAwe studentButton" />
-						                </Link>
-					                </h4>
+					                <h2 key={student.id} className="studentName">{student.student_first} {student.student_last} </h2>
+						              <h4 className="studentView"> View Student Profile <FaArrowCircleORight className="fontAwe" /></h4>
 					              </div>
 				              </div>
 				            ))}

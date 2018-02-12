@@ -21,7 +21,14 @@ import ScheduleTable from '../../components/ScheduleTable'
 
 
 // assets
-
+const style = {
+	jumbotron: {
+		background: "#fedc60"
+	},
+	arrow: {
+    color: "#31ace0"
+	}
+}
 
 const arrowSize = 50;
 
@@ -30,6 +37,7 @@ const StudentProfile = () => (
 
 				<Jumbotron 
 					display="Student Profile"
+					style={style.jumbotron}
 				/>
 
 				<div className="container">
@@ -45,6 +53,7 @@ const StudentProfile = () => (
 							to="/view_family/:id/invoices"
 							size={arrowSize}
 							className="fontAwe"
+							style={style.arrow}
 							/>
 						</div>
 						{/* main container that contains content */}
@@ -74,6 +83,7 @@ const StudentProfile = () => (
 							to="/view_family/:id/evaluations"
 							size={arrowSize}
 							className="fontAwe"
+							style={style.arrow}
 							/>
 						</div>
 						{/* built-in margin*/}

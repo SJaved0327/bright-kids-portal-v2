@@ -1,0 +1,40 @@
+#mainContainer {
+	background: #f4f8f9;
+}
+
+.studentsDiv {
+	overflow-y: scroll;
+ 	height: 400px;
+ 	margin-top: 20px;
+}
+
+.studentRow {
+	background: #b5e4f8;
+	border-radius: 25px;
+  border: 2px solid #A9A9A9;
+  padding: 20px;
+  width: 75%;
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.studentName {
+	float: left;
+}
+
+.studentView {
+	float: right;
+}
+
+.studentButton {
+	margin-left: 5px;
+}
+
+.jumbotron {
+	background: #fedc60;
+	margin-bottom: 0px;
+}
+

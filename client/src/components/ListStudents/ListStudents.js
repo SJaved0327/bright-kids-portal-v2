@@ -9,12 +9,23 @@ import {
 } from "react-router-dom";
 // components
 import Jumbotron from '../Jumbotron'
+//assets
+import FaArrowCircleRight from 'react-icons/lib/fa/arrow-circle-o-right'
+import './ListStudents.css'
+
 // utils
 import API from '../../utils/APIstudents'
 
 // const dynamicRedirect = ({ match }) => {
 // 	return <Route to"" render=/>
 // }
+
+//assets
+const style = {
+	jumbotron: {
+		background: "#fedc60"
+	}
+}
 
 class ListStudents extends React.Component {
 	
@@ -51,24 +62,30 @@ class ListStudents extends React.Component {
 
 				<Jumbotron 
 					display="Students In Your Family"
+					style={style.jumbotron}
 				/>
 
-				<div className="container">
+				<div className="container" id="mainContainer">
 					<div className="row">
 						<div className="col-lg-12">
 							<div>
 				        {/* If there are students loaded to the state */}
 								{this.state.students.length ? (
-				          <div>
+				          <div className="studentsDiv">
 				          	{/* Go through every student in family and render a div*/}
 				            {this.state.students.map(student => (
-				              <div>
-				                <h3 key={student.id}>
-				                	{student.student_first} {student.student_last}
-				                </h3>
-				                <Link to={"/view_family/" + student.id}>
-				                   <button><p>Choose Student</p></button>
-				                </Link>
+				              <div className="studentRow">
+				              	<div>
+					                <h2 key={student.id} className="studentName">
+					                	{student.student_first} {student.student_last}
+					                </h2>
+					                <h4 className="studentView">
+					                	View Profile Page
+						                <Link to={"/view_family/" + student.id}>
+						                   <FaArrowCircleRight className="fontAwe studentButton" />
+						                </Link>
+					                </h4>
+					              </div>
 				              </div>
 				            ))}
 				          </div>

@@ -10,9 +10,11 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right'
 //comments
 
 const RightPageArrow = (props) => (
-	<Link to={props.to}>
-		<FaAngleRight size={props.size} className="fontAwe" />
-	</Link>
+	<div style={props.style}>	
+		<Link to={props.to}>
+			<FaAngleRight size={props.size} className="fontAwe" />
+		</Link>
+	</div>
 )
 
 export default RightPageArrow;

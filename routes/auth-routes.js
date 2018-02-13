@@ -10,7 +10,13 @@ module.exports = function(passport){
       if (!user) { return res.status(403).send("Not logged in."); }
       req.logIn(user, function(err) {
         if (err) { return next(err); }
-        return res.status(200).send("log in successful"); 
+
+        console.log("here is the info, ",info);
+        return res.status(200).send({
+          "signedIn":"true",
+          "user":user
+
+    }); 
      
       });
     })(req, res, next);

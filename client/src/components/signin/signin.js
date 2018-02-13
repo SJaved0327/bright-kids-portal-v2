@@ -40,25 +40,35 @@ class SignIn extends Component {
 
 
 	}
-	
 
-	 handleEmailChange (event){
-		this.setState({ 
+
+	handleEmailChange(event) {
+		this.setState({
 			emailInput: event.target.value
-		 });
+		});
 	}
 
-	 handlePasswordChange (event)  {
-		this.setState({ 
+	handlePasswordChange(event) {
+		this.setState({
 			passwordInput: event.target.value
 		});
 	}
 
-	 handleSubmit (event){
+	handleSubmit(event) {
 		event.preventDefault();
+		// console.log("Here is THIS",this)
+		// console.log("Here is submit",event.target.submit.value)
 
-		var email = event.target.emailInput.value;
-		var password = event.target.passwordInput.value;
+		// var email = event.target.emailInput.value;
+		// var password = event.target.passwordInput.value;
+
+		var email = this.state.emailInput;
+		var password = this.state.passwordInput;
+
+
+		console.log("email:", email, typeof email)
+		console.log("password:", password, typeof password)
+
 
 		function logInAttempt(query) {
 			return axios.post(window.location.href + "auth/signin", {
@@ -68,14 +78,20 @@ class SignIn extends Component {
 
 			}).then(function (response) {
 				console.log("response received!")
-				return true;
-				
+				console.log(response);
+				if (response.data.signedIn == "true") {
+					console.log("this should be rerouting now")
+					window.location.href = window.location.href + 'select_path'
+				} else{
+					window.location.href = window.location.href
+				}
+
 			})
 
 		} return logInAttempt()
 
-	} 
-	
+	}
+
 
 
 
@@ -91,15 +107,15 @@ class SignIn extends Component {
 
 					<div className="form-group" style={styles.formGroup}>
 						<label htmlFor="emailInput" style={styles.label}>Email address:</label>
-						<input type="email" className="form-control" name="emailInput" placeholder="name@example.com" value={this.state.value} onChange={this.handleEmailChange}/>
+						<input type="email" className="form-control" name="emailInput" placeholder="name@example.com" value={this.state.value} onChange={this.handleEmailChange} />
 					</div>
 
 					<div className="form-group" style={styles.formGroup}>
 						<label htmlFor="inputPassword" style={styles.label}>Password:</label>
-						<input type="password" className="form-control" name="passwordInput" placeholder="password" value={this.state.value} onChange={this.handlePasswordChange}/>
+						<input type="password" className="form-control" name="passwordInput" placeholder="password" value={this.state.value} onChange={this.handlePasswordChange} />
 					</div>
-					
-					<Link to="/select_path"> <input type="submit" value="Submit" /></Link>
+
+					<input type="submit" value="Submit" onClick={this.handleSubmit} />
 
 				</form>
 			</div>

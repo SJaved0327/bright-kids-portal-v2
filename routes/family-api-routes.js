@@ -10,7 +10,7 @@ module.exports = function(app) {
   });
 
   // Find families ID with the id in req.params.id and return them to the user with res.json
-  app.get("/api/parents/:id", function(req, res){
+  app.get("/api/families/:id", function(req, res){
     brightKids_DB.findOne({
       where: {
         id: req.params.id

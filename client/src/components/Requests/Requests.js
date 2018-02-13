@@ -1,6 +1,13 @@
 // react
 import React from 'react';
 
+	const style = {
+		card : {
+			width: "100%",
+			height: "250px"
+		}
+	}
+
 class Requests extends React.Component {
 
 	state = {
@@ -22,9 +29,9 @@ class Requests extends React.Component {
 
 	render(){
 		return(
-			<div class="card">
+			<div class="card" style={style.card}>
 			  <div class="card-body">
-			    <h5 class="card-title">Make A Request</h5>
+			    <h4 class="card-title">Make A Request</h4>
 					<div class="input-group mb-3">
 					  <div class="input-group-prepend">
 					    <label class="input-group-text" for="inputGroupSelect01">Options</label>
@@ -36,6 +43,8 @@ class Requests extends React.Component {
 					    <option value="3">Curriculum</option>
 					  </select>
 					</div>
+					<textarea />
+					<button id="submitButton">Submit</button>
 			  </div>
 			</div>
 		)

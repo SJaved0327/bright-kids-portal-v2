@@ -2,7 +2,11 @@
 import React from 'react';
 
 //assets
-
+const style = {
+	card: {
+		width: "100%"
+	}
+}
 
 class AssignedAM extends React.Component {
 
@@ -22,10 +26,12 @@ class AssignedAM extends React.Component {
 
 	render(){
 		return (
-			<div>
-				<h3>Assigned Account Manager</h3>
-				<p>Name: {this.state.AccountManager.first_name} {this.state.AccountManager.last_name}</p>
-				<p>Email: {this.state.AccountManager.email}</p>
+			<div className="card" style={style.card}>
+				<div className="card-body">
+					<h4 class="card-title">Assigned Account Manager</h4>
+					<p>Name: {this.state.AccountManager.first_name} {this.state.AccountManager.last_name}</p>
+					<p>Email: {this.state.AccountManager.email}</p>
+				</div>
 			</div>
 		)
 	}

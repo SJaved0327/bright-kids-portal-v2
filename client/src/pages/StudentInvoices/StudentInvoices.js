@@ -20,8 +20,17 @@ import InvoiceGrid from '../../components/InvoiceGrid'
 const style = {
 	jumbotron: {
 		background: "#fedc60"
+	},
+	container: {
+		background: "#f4f8f9",
+		padding: "20px"
+	},
+	arrow: {
+    color: "#31ace0"
 	}
 }
+
+const arrowSize = 50;
 
 
 const StudentInvoices = () => (
@@ -31,7 +40,38 @@ const StudentInvoices = () => (
 			style={style.jumbotron}
 		/>
 
-		<InvoiceGrid />
+		<div className="container" style={style.container}>
+			<div className="row">
+
+				{/* built-in margin*/}
+				<div className="col-lg-1">
+				</div>
+				{/* holds nav arrow */}
+				<div className="col-lg-1">
+				{/* No left arrow as this is the end of the carousel */}
+				</div>
+
+				{/* main container that contains content */}
+				<div className="col-lg-8">
+					<InvoiceGrid />
+				</div>
+
+				{/* holds nav arrow */}
+				<div className="col-lg-1">
+				{/* if currently on /view_family/:id/invoices right arrow should take user to profile */}
+					<RightPageArrow 
+					to="/view_family/:id"
+					size={arrowSize}
+					className="fontAwe"
+					style={style.arrow}
+					/>
+				</div>
+				{/* built-in margin*/}
+				<div className="col-lg-1">
+				</div>
+
+			</div>
+		</div>
 
 	</div>
 );

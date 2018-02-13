@@ -1,0 +1,23 @@
+.card {
+	background: #b5e4f8;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#scheduleCard {
+	width: 100%;
+	height: 350px;
+}
+
+.table {
+	background: #f4f8f9;
+	overflow-y: scroll;
+	height: 200px;
+	margin: auto;
+}
+
+.card-title {
+	text-align: center;
+	padding-bottom: 10px;
+}

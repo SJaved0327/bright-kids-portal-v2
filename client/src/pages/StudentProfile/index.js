@@ -1,1 +1,1 @@
-export { default } from "./StudentDashboard.js";
+export { default } from "./StudentProfile.js";

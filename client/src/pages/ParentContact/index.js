@@ -1,1 +1,1 @@
-export { default } from "./ParentContact";
+export { default } from "./ParentContact.js";

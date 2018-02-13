@@ -14,22 +14,22 @@ import {
 import Jumbotron from '../../components/Jumbotron'
 import LeftPageArrow from '../../components/LeftPageArrow'
 import RightPageArrow from '../../components/RightPageArrow'
+
+import Requests from '../../components/Requests'
+import AssignedAM from '../../components/AssignedAM'
+import ScheduleTable from '../../components/ScheduleTable'
+
+
 // assets
 
 
 const arrowSize = 50;
 
-class StudentDashboard extends React.Component {
-
-
-
-
-	render(){
-		return (
+const StudentProfile = () => (
 			<div>
 
 				<Jumbotron 
-					display="Student Dashboard"
+					display="Student Profile"
 				/>
 
 				<div className="container">
@@ -84,19 +84,5 @@ class StudentDashboard extends React.Component {
 				</div>
 			</div>
 		)
-	}
-}
 
-const Requests = () => {
-	<h3> Request box goes here </h3>
-};
-
-const AssignedAM = () => {
-	<h3> Assigned AM box goes here </h3>
-};
-
-const ScheduleTable = () => {
-	<h3> Schedule Table box goes here </h3>
-};
-
-export default StudentDashboard; 
+export default StudentProfile; 

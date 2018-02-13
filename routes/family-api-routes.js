@@ -15,16 +15,17 @@ module.exports = function (app) {
 
 
 
-  // Find parent ID models and return them with res.json
-  app.get("/api/parents", function (req, res) {
-    db.Parents.findAll({}).then(function (dbAuthor) {
+
+  // Find families ID models and return them with res.json
+  app.get("/api/families", function(req, res) {
+    brightKids_DB.findAll({}).then(function(dbAuthor) {
       res.json(dbAuthor);
     });
   });
 
-  // Find Parent ID with the id in req.params.id and return them to the user with res.json
-  app.get("/api/parents/:id", function (req, res) {
-    db.Parents.findOne({
+  // Find families ID with the id in req.params.id and return them to the user with res.json
+  app.get("/api/families/:id", function(req, res){
+    brightKids_DB.findOne({
       where: {
         id: req.params.id
       }
@@ -32,12 +33,12 @@ module.exports = function (app) {
       res.json(dbParents)
     })
   });
-
-  // Create Parents ID with the data available to us in req.body
-  app.post("/api/parents", function (req, res) {
+  
+  // Create families ID with the data available to us in req.body
+  app.post("/api/families", function(req, res){
     // console.log request
     console.log(req.body);
-    db.Parents.create(req.body).then(function (dbParents) {
+    brightKids_DB.create(req.body).then(function(dbParents) {
       res.json(dbParents);
     });
   });

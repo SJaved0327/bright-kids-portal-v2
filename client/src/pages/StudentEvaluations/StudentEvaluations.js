@@ -17,6 +17,7 @@ import RightPageArrow from '../../components/RightPageArrow'
 import AssignedAM from '../../components/AssignedAM'
 import CompletedEvaluations from '../../components/CompletedEvaluations'
 import ScheduleTable from '../../components/ScheduleTable'
+import LineChart from '../../components/PolarChart'
 
 // assets
 import './StudentEvaluations.css'
@@ -215,15 +216,21 @@ class StudentEvaluations extends React.Component {
 						notes: "It was a pleasure working with John today."
 					}
 				}
-			]
+			],
+			chosen: {
+
+			}
 		}
 
 		this.handleKeyClick = this.handleKeyClick.bind(this);
 	}
 	
-	handleKeyClick = () => {
-		return true
+	handleKeyClick(index){
+	
+		console.log(index)
+
 	};
+
 
 	render(){
 		return(
@@ -259,9 +266,11 @@ class StudentEvaluations extends React.Component {
 									    <h4 className="card-title">Completed Evaluations</h4>
 									    	<div className="evalList">
 													{this.state.evaluations.map((evaluation, index) => (
-															<div className="evalRow">
-																<a onClick={this.handleKeyClick}><h5 key={index}>{evaluation.date} {evaluation.test_type} {evaluation.evaluation_type}</h5></a>
-															</div>
+														<div className="evalRow">
+															<a><h5 value={index} onClick={() => this.handleKeyClick(index)}>
+															{evaluation.date} {evaluation.test_type} {evaluation.evaluation_type}
+															</h5></a>
+														</div>
 													))}
 												</div>
 									  </div>
@@ -274,18 +283,17 @@ class StudentEvaluations extends React.Component {
 							{/* Row 2 */}
 							<div className="row chartRow">
 
-								<div className="col-lg-6">
-									<div>
-										<h2>Pie Chart Goes Here</h2>
-									</div>
-								</div>
+								<div className="col-lg-12 chartRow">
 
-								<div className="col-lg-6">
-									<div>
-										<h2>Bar Chart Goes Here</h2>
-									</div>
-								</div>
+									<div className="floatLeft">
+										<LineChart 
 
+
+										/>
+									</div>
+							
+
+								</div>
 							</div>
 							{/* Row 3 */}
 							<div className="row">

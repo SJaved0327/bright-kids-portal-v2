@@ -1,5 +1,10 @@
-.chartRow {
-	height: 400px;
+.charRow {
+	height: 800px;
+}
+
+.chartDiv {
+	margin: 50px;
+	padding: 10px;
 }
 
 .evalList {
@@ -8,3 +13,6 @@
 	margin-bottom: 10px;
 }
 
+.floatLeft {
+	float: left;
+}

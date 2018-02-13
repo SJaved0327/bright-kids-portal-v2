@@ -44,15 +44,13 @@ const StudentInvoices = () => (
 			<div className="row">
 
 				{/* built-in margin*/}
-				<div className="col-lg-1">
-				</div>
 				{/* holds nav arrow */}
 				<div className="col-lg-1">
 				{/* No left arrow as this is the end of the carousel */}
 				</div>
 
 				{/* main container that contains content */}
-				<div className="col-lg-8">
+				<div className="col-lg-10">
 					<InvoiceGrid />
 				</div>
 
@@ -67,8 +65,7 @@ const StudentInvoices = () => (
 					/>
 				</div>
 				{/* built-in margin*/}
-				<div className="col-lg-1">
-				</div>
+
 
 			</div>
 		</div>

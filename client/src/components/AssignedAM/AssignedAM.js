@@ -4,7 +4,8 @@ import React from 'react';
 //assets
 const style = {
 	card: {
-		width: "100%"
+		width: "100%",
+		height: "150px"
 	}
 }
 

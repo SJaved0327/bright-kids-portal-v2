@@ -44,8 +44,6 @@ const StudentProfile = () => (
 
 					<div className="row">
 						{/* built-in margin*/}
-						<div className="col-lg-1">
-						</div>
 						{/* holds nav arrow */}
 						<div className="col-lg-1">
 						{/* if currently on /view_family/:id, left arrow should take user to invoices */}
@@ -57,7 +55,7 @@ const StudentProfile = () => (
 							/>
 						</div>
 						{/* main container that contains content */}
-						<div className="col-lg-8">
+						<div className="col-lg-10">
 
 							{/* Row 1 */}
 							<div className="row">
@@ -87,8 +85,6 @@ const StudentProfile = () => (
 							/>
 						</div>
 						{/* built-in margin*/}
-						<div className="col-lg-1">
-						</div>
 					</div>
 
 				</div>

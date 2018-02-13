@@ -1,0 +1,10 @@
+.chartRow {
+	height: 400px;
+}
+
+.evalList {
+	height: 70px;
+	overflow-y: scroll;
+	margin-bottom: 10px;
+}
+

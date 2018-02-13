@@ -29,14 +29,14 @@ class Requests extends React.Component {
 
 	render(){
 		return(
-			<div class="card" style={style.card}>
-			  <div class="card-body">
-			    <h4 class="card-title">Make A Request</h4>
-					<div class="input-group mb-3">
-					  <div class="input-group-prepend">
-					    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+			<div className="card" style={style.card}>
+			  <div className="card-body">
+			    <h4 className="card-title">Make A Request</h4>
+					<div className="input-group mb-3">
+					  <div className="input-group-prepend">
+					    <label className="input-group-text" for="inputGroupSelect01">Options</label>
 					  </div>
-					  <select class="custom-select" id="inputGroupSelect01">
+					  <select className="custom-select" id="inputGroupSelect01">
 					    <option selected>Choose...</option>
 					    <option value="1">Reschedule Session</option>
 					    <option value="2">Tutor Note</option>

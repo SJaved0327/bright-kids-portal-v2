@@ -1,6 +1,20 @@
 var db = require('../models');
 
-module.exports = function(app) {
+module.exports = function (app) {
+
+  // app.get("/*", function (req, res) {
+  //   if (req.isAuthenticated()) {
+  //     next();
+  //   } else {
+  //     res.redirect("/");
+  //   }
+
+  // });
+
+
+
+
+
 
   // Find families ID models and return them with res.json
   app.get("/api/families", function(req, res) {
@@ -15,11 +29,11 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       }
-    }).then(function(dbParents){
+    }).then(function (dbParents) {
       res.json(dbParents)
     })
   });
-
+  
   // Create families ID with the data available to us in req.body
   app.post("/api/families", function(req, res){
     // console.log request

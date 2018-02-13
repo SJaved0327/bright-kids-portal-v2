@@ -2,6 +2,7 @@
 import React from 'react';
 //components
 import SignIn from '../../components/signin'
+//assets
 
 const LogIn = () =>
 	<div className="container-fluid">

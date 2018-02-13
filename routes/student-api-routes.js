@@ -1,22 +1,43 @@
+// Require models
 var db = require('../models');
 
+// Routes
+// =====================================================
 module.exports = function(app) {
 
+
+  // app.get("/*", function (req, res) {
+  //   if (req.isAuthenticated()) {
+  //     next();
+  //   } else {
+  //     res.redirect("/");
+  //   }
+
+  // });
+
+
+  // GET
   // Find all students and return them to the user with res.json
   app.get("/api/students", function(req, res) {
-    db.Student.findAll({}).then(function(dbAuthor) {
-      res.json(dbAuthor);
-    });
+    db.Student.findAll({})
+      .then(function(dbStudent) {
+
+        res.json(dbStudent);
+
+      });
   });
 
+  // GET
   // Find one Student with the id in req.params.id and return them to the user with res.json
   app.get("/api/students/:id", function(req, res){
+
     db.Student.findOne({
       where: {
         id: req.params.id
       }
     }).then(function(dbStudent){
       res.json(dbStudent)
+      console.log(dbStudent);
     })
   });
 

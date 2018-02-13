@@ -85,21 +85,12 @@ class StudentEvaluations extends React.Component {
 			]
 		}
 
-		this.populateCompletedEvaluations = this.populateCompletedEvaluations.bind(this);
 		this.handleKeyClick = this.handleKeyClick.bind(this);
 	}
 	
 	handleKeyClick = () => {
 		return true
 	};
-
-	populateCompletedEvaluations (){ 
-		this.state.evaluations.map((evaluation, index) => (
-				<div className="evalRow">
-					<a onClick={this.handleKeyClick}><h2 key={index}>{evaluation.date} {evaluation.test_type}</h2></a>
-				</div>
-		));
-	}
 
 	render(){
 		return(
@@ -132,11 +123,16 @@ class StudentEvaluations extends React.Component {
 						{/* Row 1 */}
 							<div className="row">
 								<div className="col-lg-6">
-							 
-									<CompletedEvaluations 
-										onLoad={this.populateCompletedEvaluations()}
-									/>
-									  
+									<div class="card" style={style.card}>
+									  <div class="card-body">
+									    <h4 class="card-title">Completed Evaluations</h4>
+												{this.state.evaluations.map((evaluation, index) => (
+														<div className="evalRow">
+															<a onClick={this.handleKeyClick}><h5 key={index}>{evaluation.date} {evaluation.test_type}</h5></a>
+														</div>
+												))}
+									  </div>
+									</div>
 								</div>
 								<div className="col-lg-6">
 									<AssignedAM />

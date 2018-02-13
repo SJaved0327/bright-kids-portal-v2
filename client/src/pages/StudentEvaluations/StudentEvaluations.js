@@ -15,7 +15,7 @@ import Jumbotron from '../../components/Jumbotron'
 import LeftPageArrow from '../../components/LeftPageArrow'
 import RightPageArrow from '../../components/RightPageArrow'
 import AssignedAM from '../../components/AssignedAM'
-import Requests from '../../components/Requests'
+import CompletedEvaluations from '../../components/CompletedEvaluations'
 import ScheduleTable from '../../components/ScheduleTable'
 
 // assets
@@ -36,50 +36,69 @@ const arrowSize = 50;
 
 class StudentEvaluations extends React.Component {
 	
-	state = {
-		evaluations: [
-			{
-				date: "01/01/2018",
-				test_type: "Gifted & Talented",
-				results: {
-					subtests: [
-						{OLSAT: {
-								Following_Directions : {
-									correct: 7, 
-									total: 10
-								},
-								Arithmetic_Reasoning : {
-									correct: 4, 
-									total: 10
-								},
-								Aural_Reasoning : {
-									correct: 5, 
-									total: 10
-								}}
-						},
-						{NNAT: {
-								Pattern_Completion : {
-									correct: 3, 
-									total: 10
-								},
-								Reasoning_By_Analogy: {
-									correct: 2, 
-									total: 10
-								},
-								Serial_Reasoning : {
-									correct: 3, 
-									total: 10
-								},
-								Spatial_Visualization : {
-									correct: 3, 
-									total: 10
-								}}
-						}
-					],
-					notes: "It was a pleasure working with John today."
+	constructor(props){
+		super(props);
+
+		this.state = {
+			evaluations: [
+				{
+					date: "01/01/2018",
+					test_type: "Gifted & Talented",
+					results: {
+						subtests: [
+							{OLSAT: {
+									Following_Directions : {
+										correct: 7, 
+										total: 10
+									},
+									Arithmetic_Reasoning : {
+										correct: 4, 
+										total: 10
+									},
+									Aural_Reasoning : {
+										correct: 5, 
+										total: 10
+									}}
+							},
+							{NNAT: {
+									Pattern_Completion : {
+										correct: 3, 
+										total: 10
+									},
+									Reasoning_By_Analogy: {
+										correct: 2, 
+										total: 10
+									},
+									Serial_Reasoning : {
+										correct: 3, 
+										total: 10
+									},
+									Spatial_Visualization : {
+										correct: 3, 
+										total: 10
+									}}
+							}
+						],
+						notes: "It was a pleasure working with John today."
+					}
 				}
-			}
-		]
+			]
+		}
+
+		this.populateCompletedEvaluations = this.populateCompletedEvaluations.bind(this);
+		this.handleKeyClick = this.handleKeyClick.bind(this);
+	}
+	
+	handleKeyClick = () => {
+		return true
+	};
+
+	populateCompletedEvaluations (){ 
+		this.state.evaluations.map((evaluation, index) => (
+				<div className="evalRow">
+					<a onClick={this.handleKeyClick}><h2 key={index}>{evaluation.date} {evaluation.test_type}</h2></a>
+				</div>
+		));
 	}
 
 	render(){
@@ -113,7 +132,11 @@ class StudentEvaluations extends React.Component {
 						{/* Row 1 */}
 							<div className="row">
 								<div className="col-lg-6">
-									<Requests />
+							 
+									<CompletedEvaluations 
+										onLoad={this.populateCompletedEvaluations()}
+									/>
+									  
 								</div>
 								<div className="col-lg-6">
 									<AssignedAM />
@@ -121,8 +144,20 @@ class StudentEvaluations extends React.Component {
 							</div>
 							{/* Row 2 */}
 							<div className="row">
+
+								<div className="col-lg-6">
+									<h2>Pie Chart Goes Here</h2>
+								</div>
+
+								<div className="col-lg-6">
+									<h2>Bar Graph Goes Here</h2>
+								</div>
+
+							</div>
+							{/* Row 3 */}
+							<div className="row">
 								<div className="col-lg-12">
-									<ScheduleTable />
+									<h2>Notes Go Here</h2>
 								</div>
 							</div>
 

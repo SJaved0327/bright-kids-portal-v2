@@ -14,6 +14,7 @@ import {
 import Jumbotron from '../../components/Jumbotron'
 import LeftPageArrow from '../../components/LeftPageArrow'
 import RightPageArrow from '../../components/RightPageArrow'
+import InvoiceGrid from '../../components/InvoiceGrid'
 
 // assets
 const style = {
@@ -26,9 +27,11 @@ const style = {
 const StudentInvoices = () => (
 	<div>
 		<Jumbotron 
-			display="Students In Your Family"
+			display="Invoices"
 			style={style.jumbotron}
 		/>
+
+		<InvoiceGrid />
 
 	</div>
 );

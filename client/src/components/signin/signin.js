@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import './signin.css'
 
 const styles = {
 	formDiv: {
@@ -102,9 +103,10 @@ class SignIn extends Component {
 		return (
 			<div className="formDiv card" style={styles.formDiv}>
 				<form onSubmit={this.handleSubmit}>
-					<h3>Sign In</h3>
-					<img src="./logo.png" width="150px" height="75px" alt="bright kids logo" />
+					
+					<span id="logoSpan"><img src="./logo.png" width="200px" height="75px" alt="bright kids logo" /></span>
 
+					<h3 className="text-center">Sign In</h3>
 					<div className="form-group" style={styles.formGroup}>
 						<label htmlFor="emailInput" style={styles.label}>Email address:</label>
 						<input type="email" className="form-control" name="emailInput" placeholder="name@example.com" value={this.state.value} onChange={this.handleEmailChange} />

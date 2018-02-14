@@ -1,3 +1,7 @@
+#selectContainer {
+    margin-top: 50px;
+}
+
 .selectCircle{
 
         width: 250px;
@@ -17,13 +21,13 @@
 }
 
 .viewFamily.selectCircle{
-    background: #31ace0;
+    background: #fedc60;
 
     
 
 }
 .registerPrograms.selectCircle{
-    background:#fedc60;
+    background:#31ace0;
 
 }
 
@@ -46,6 +50,7 @@
 .iconText{
   margin-bottom: 40px;
   font-weight: 3000;
+  font-family: 'Covered By Your Grace', cursive;
 
 }
 

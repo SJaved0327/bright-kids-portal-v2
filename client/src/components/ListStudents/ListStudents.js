@@ -9,6 +9,10 @@ import {
 } from "react-router-dom";
 // components
 import Jumbotron from '../Jumbotron'
+//assets
+import FaArrowCircleORight from 'react-icons/lib/fa/arrow-circle-o-right'
+import './ListStudents.css'
+
 // utils
 import API from '../../utils/APIstudents'
 
@@ -16,31 +20,49 @@ import API from '../../utils/APIstudents'
 // 	return <Route to"" render=/>
 // }
 
+//assets
+
 class ListStudents extends React.Component {
 	
 	state = {
-		students: [],
+		students: [
+			{
+				id: 10034,
+				student_first: "Steve",
+				student_last: "Jobs"
+			},
+			{
+				id: 10035,
+				student_first: "Celie",
+				student_last: "Jobs"
+			},
+			{
+				id: 10036,
+				student_first: "Rhys",
+				student_last: "Jobs"
+			}
+		],
 	}
 
-	//when component mounts, load student data
-	componentDidMount() {
-		this.loadStudents();
-	}
+	// //when component mounts, load student data
+	// componentDidMount() {
+	// 	this.loadStudents();
+	// }
 
-	//load student data from database
-	loadStudents = () => {
-		API.getAllStudents()
-			.then(res => {
-					// console.log(res.data)
-					this.setState({
-						students: res.data
-					})
-					console.log(this.state)
-					// console.log(this.state.students[0].id)
-				}
-			)
-			.catch(err => console.log(err));
-	};
+	// //load student data from database
+	// loadStudents = () => {
+	// 	API.getAllStudents()
+	// 		.then(res => {
+	// 				// console.log(res.data)
+	// 				this.setState({
+	// 					students: res.data
+	// 				})
+	// 				console.log(this.state)
+	// 				// console.log(this.state.students[0].id)
+	// 			}
+	// 		)
+	// 		.catch(err => console.log(err));
+	// };
 
 
 	render() {
@@ -53,22 +75,20 @@ class ListStudents extends React.Component {
 					display="Students In Your Family"
 				/>
 
-				<div className="container">
+				<div className="container" id="mainContainer">
 					<div className="row">
 						<div className="col-lg-12">
 							<div>
 				        {/* If there are students loaded to the state */}
 								{this.state.students.length ? (
-				          <div>
+				          <div className="studentsDiv">
 				          	{/* Go through every student in family and render a div*/}
 				            {this.state.students.map(student => (
-				              <div>
-				                <h3 key={student.id}>
-				                	{student.student_first} {student.student_last}
-				                </h3>
-				                <Link to={"/view_family/" + student.id}>
-				                   <button><p>Choose Student</p></button>
-				                </Link>
+				              <div className="studentRow">
+				              	<div>
+					                <h3 key={student.id} className="studentName">{student.student_first} {student.student_last}</h3>
+						              <h4 className="studentView">View Student Profile <Link to={"/view_family/" + student.id}><FaArrowCircleORight size={50} id="arrowButton" /></Link></h4>
+					              </div>
 				              </div>
 				            ))}
 				          </div>

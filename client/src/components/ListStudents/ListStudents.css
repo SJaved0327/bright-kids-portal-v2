@@ -11,10 +11,10 @@
 .studentRow {
 	background: #b5e4f8;
 	border-radius: 25px;
-  border: 2px solid #A9A9A9;
+  border: 1px solid #31ace0;
   padding: 20px;
-  width: 80%;
-  height: 100px;
+  width: 70%;
+  height: 90px;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: auto;
@@ -23,20 +23,23 @@
 
 .studentName {
 	float: left;
-	margin-right: 0px;
+	margin-top: 10px;
+	margin-bottom: auto;
+	margin-left: 15px;
 }
 
 .studentView {
 	float: right;
-	margin-left: 0px;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .studentButton {
 	margin-left: 5px;
 }
 
-.jumbotron {
-	background: #fedc60;
-	margin-bottom: 0px;
+#arrowButton:hover {
+	color: #fedc60;
 }
+
 

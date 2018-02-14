@@ -35,7 +35,11 @@ const style = {
 	},
 	card : {
 		width: "100%",
-		height: "150px"
+		height: "150px",
+		borderStyle: "solid",
+		borderWidth: "1px",
+		borderColor: "#31ace0",
+		borderRadius: "5px"
 	},
 	evalRow: {
 		marginTop: "20px"
@@ -102,13 +106,13 @@ class StudentEvaluations extends React.Component {
 									}}
 							}
 						],
-						notes: "It was a pleasure working with John today. As it was his first time working with a new tutor, he was a bit slow to warm up. I'm happy to say that he only needed two breaks during the session. Great job!"
+						notes: "It was a pleasure working with Steve today. As it was his first time working with a new tutor, he was a bit slow to warm up. I'm happy to say that he only needed two breaks during the session. Great job!"
 					}
 				},
 				{
 					date: "01/23/2018",
 					test_type: "Gifted & Talented",
-					evaluation_type: "Progress Test",
+					evaluation_type: "Progress Test 1",
 					results: {
 						subtests: [
 							{OLSAT: {
@@ -151,13 +155,13 @@ class StudentEvaluations extends React.Component {
 									}}
 							}
 						],
-						notes: "John had a better day today and needed less breaks and redirection. He did very well on the OLSAT portion, however his scores fell greatly during the NNAT portion. I attribute this to fatigue as he expressed being tired halfway through the evaluation."
+						notes: "Steve had a better day today and needed less breaks and redirection. He did very well on the OLSAT portion, however his scores fell greatly during the NNAT portion. I attribute this to fatigue as he expressed being tired halfway through the evaluation."
 					}
 				},
 				{
 					date: "02/09/2018",
 					test_type: "Gifted & Talented",
-					evaluation_type: "Progress Test",
+					evaluation_type: "Progress Test 2",
 					results: {
 						subtests: [
 							{OLSAT: {
@@ -200,7 +204,7 @@ class StudentEvaluations extends React.Component {
 									}}
 							}
 						],
-						notes: "It was a pleasure working with John today."
+						notes: "It was a pleasure working with Steve today."
 					}
 				},
 				{
@@ -249,7 +253,7 @@ class StudentEvaluations extends React.Component {
 									}}
 							}
 						],
-						notes: "It was a pleasure working with John today."
+						notes: "It was a pleasure working with Steve today."
 					}
 				}
 			],
@@ -299,7 +303,7 @@ class StudentEvaluations extends React.Component {
 						},
 			chosenDate: "",
 			chosenEval: "",
-			chosenTest: ""
+			chosenTest: "Select An Evaluation To View"
 		}
 
 		this.handleValueClick = this.handleValueClick.bind(this);
@@ -411,7 +415,6 @@ class StudentEvaluations extends React.Component {
 												spatialCorrect={NNAT.Spatial_Visualization.correct}
 												spatialIncorrect={NNAT.Spatial_Visualization.incorrect}
 												spatialTotal={NNAT.Spatial_Visualization.total}
-
 											/>
 									</div>
 							

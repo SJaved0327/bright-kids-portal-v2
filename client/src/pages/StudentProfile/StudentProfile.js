@@ -27,6 +27,9 @@ const style = {
 	},
 	arrow: {
     color: "#31ace0"
+	},
+	stuProfileContainer: {
+		backgroundColor: "#f4f8f9"
 	}
 }
 
@@ -40,7 +43,7 @@ const StudentProfile = () => (
 					style={style.jumbotron}
 				/>
 
-				<div className="container">
+				<div className="container" style={style.stuProfileContainer}>
 
 					<div className="row">
 						{/* built-in margin*/}

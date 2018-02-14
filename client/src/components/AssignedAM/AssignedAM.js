@@ -2,19 +2,16 @@
 import React from 'react';
 
 //assets
-const style = {
-	card: {
-		width: "100%",
-		height: "150px"
-	}
-}
+import './AssignedAM.css'
+import PaperPlane from 'react-icons/lib/fa/paper-plane'
+
 
 class AssignedAM extends React.Component {
 
 	state = {
 		AccountManager: {
 			first_name: "Taylor",
-			last_name: "Kellly",
+			last_name: "Kelly",
 			email: "t.kelly@brightkidsnyc.com"
 		},
 		CurriculumTeam: {
@@ -25,13 +22,17 @@ class AssignedAM extends React.Component {
 		}
 	}
 
+
 	render(){
 		return (
-			<div className="card" style={style.card}>
+			<div className="card" id="AMcard">
 				<div className="card-body">
-					<h4 class="card-title">Assigned Account Manager</h4>
-					<p>Name: {this.state.AccountManager.first_name} {this.state.AccountManager.last_name}</p>
-					<p>Email: {this.state.AccountManager.email}</p>
+			
+						<h4 class="card-title">Assigned Account Manager</h4>
+					
+						<p>Name: <strong>{this.state.AccountManager.first_name} {this.state.AccountManager.last_name}</strong></p>
+						<p>Email: <strong>{this.state.AccountManager.email}</strong><a href={this.state.AccountManager.email} target={0} id="plane"><PaperPlane size={25}/></a></p>
+	
 				</div>
 			</div>
 		)

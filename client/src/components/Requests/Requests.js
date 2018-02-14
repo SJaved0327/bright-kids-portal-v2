@@ -4,7 +4,12 @@ import React from 'react';
 	const style = {
 		card : {
 			width: "100%",
-			height: "250px"
+			height: "250px",
+			padding: "2px",
+			borderStyle: "solid",
+			borderWidth: "1px",
+			borderColor: "#31ace0",
+			borderRadius: "5px"
 		}
 	}
 
@@ -34,16 +39,21 @@ class Requests extends React.Component {
 			    <h4 className="card-title">Make A Request</h4>
 					<div className="input-group mb-3">
 					  <div className="input-group-prepend">
-					    <label className="input-group-text" for="inputGroupSelect01">Options</label>
+					    <label className="input-group-text" for="inputGroupSelect01">Type of Request:</label>
 					  </div>
 					  <select className="custom-select" id="inputGroupSelect01">
 					    <option selected>Choose...</option>
 					    <option value="1">Reschedule Session</option>
 					    <option value="2">Tutor Note</option>
-					    <option value="3">Curriculum</option>
+					    <option value="3">Curriculum Request</option>
+					    <option value="4">Consultation</option>
 					  </select>
 					</div>
-					<textarea />
+					 <div className="input-group-prepend">
+					    <label className="input-group-text" for="inputGroupDate">To be addressed by:</label>
+					  </div>
+					<input id="inputGroupDate" type="date" />
+					<br />
 					<button id="submitButton">Submit</button>
 			  </div>
 			</div>

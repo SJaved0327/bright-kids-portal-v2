@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 //assets
+import './RightPageArrow.css'
 import FaAngleRight from 'react-icons/lib/fa/angle-right'
 
 //comments
@@ -12,7 +13,7 @@ import FaAngleRight from 'react-icons/lib/fa/angle-right'
 const RightPageArrow = (props) => (
 	<div style={props.style}>	
 		<Link to={props.to}>
-			<FaAngleRight size={props.size} className="fontAwe" />
+			<FaAngleRight size={props.size} className="fontAwe rightPageArrow" />
 		</Link>
 	</div>
 )

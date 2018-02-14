@@ -21,39 +21,48 @@ import API from '../../utils/APIstudents'
 // }
 
 //assets
-const style = {
-	jumbotron: {
-		background: "#fedc60"
-	}
-}
-
-const arrowSize = 50;
 
 class ListStudents extends React.Component {
 	
 	state = {
-		students: [],
+		students: [
+			{
+				id: 10034,
+				student_first: "Steve",
+				student_last: "Jobs"
+			},
+			{
+				id: 10035,
+				student_first: "Celie",
+				student_last: "Jobs"
+			},
+			{
+				id: 10036,
+				student_first: "Rhys",
+				student_last: "Jobs"
+			}
+		],
 	}
 
-	//when component mounts, load student data
-	componentDidMount() {
-		this.loadStudents();
-	}
+	// //when component mounts, load student data
+	// componentDidMount() {
+	// 	this.loadStudents();
+	// }
 
-	//load student data from database
-	loadStudents = () => {
-		API.getAllStudents()
-			.then(res => {
-					// console.log(res.data)
-					this.setState({
-						students: res.data
-					})
-					console.log(this.state)
-					// console.log(this.state.students[0].id)
-				}
-			)
-			.catch(err => console.log(err));
-	};
+	// //load student data from database
+	// loadStudents = () => {
+	// 	API.getAllStudents()
+	// 		.then(res => {
+	// 				// console.log(res.data)
+	// 				this.setState({
+	// 					students: res.data
+	// 				})
+	// 				console.log(this.state)
+	// 				// console.log(this.state.students[0].id)
+	// 			}
+	// 		)
+	// 		.catch(err => console.log(err));
+	// };
 
 
 	render() {
@@ -64,7 +73,6 @@ class ListStudents extends React.Component {
 
 				<Jumbotron 
 					display="Students In Your Family"
-					style={style.jumbotron}
 				/>
 
 				<div className="container" id="mainContainer">
@@ -78,8 +86,8 @@ class ListStudents extends React.Component {
 				            {this.state.students.map(student => (
 				              <div className="studentRow">
 				              	<div>
-					                <h2 key={student.id} className="studentName">{student.student_first} {student.student_last} </h2>
-						              <h4 className="studentView"> View Student Profile <Link to={"/view_family/" + student.id}><FaArrowCircleORight size={arrowSize} className="fontAwe" /></Link></h4>
+					                <h3 key={student.id} className="studentName">{student.student_first} {student.student_last}</h3>
+						              <h4 className="studentView">View Student Profile <Link to={"/view_family/" + student.id}><FaArrowCircleORight size={50} id="arrowButton" /></Link></h4>
 					              </div>
 				              </div>
 				            ))}

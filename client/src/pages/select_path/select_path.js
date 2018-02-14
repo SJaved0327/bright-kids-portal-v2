@@ -22,14 +22,14 @@ class select_path extends Component {
 
     render() {
         return (
-            <div className ='container'>
+            <div className ="container" id="selectContainer">
 
 
             <Row>
 
                 <Col  md = {6} xs={12} >
 
-                <span className ='iconText'> View Family</span>
+                <span className ='iconText'><h2> View Family </h2></span>
 
                 <a href="/view_family">
                     <div className ='viewFamily selectCircle'>
@@ -41,7 +41,7 @@ class select_path extends Component {
 
 
                 <Col  md = {6} xs={12} >
-                <span className ='iconText'> Register for Programs</span>
+                <span className ='iconText'><h2> Register for Programs </h2></span>
 
                 <a href="/register_programs">
                     <div className ='registerPrograms selectCircle'>

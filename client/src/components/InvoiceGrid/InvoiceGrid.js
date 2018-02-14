@@ -3,6 +3,16 @@ import React from 'react';
 //assets 
 import './InvoiceGrid.css'
 
+const style = {
+	grid: {
+		padding: "2px",
+		borderStyle: "solid",
+		borderWidth: "1px",
+		borderColor: "#31ace0",
+		borderRadius: "5px"
+	}
+}
+
 class InvoiceGrid extends React.Component {
 
 	state = {
@@ -26,7 +36,7 @@ class InvoiceGrid extends React.Component {
 	render(){
 
 		return (
-			<div className="card">
+			<div className="card" style={style.grid}>
 				<div className="card-body">
 					<table className="table table-striped">
 					  <thead>

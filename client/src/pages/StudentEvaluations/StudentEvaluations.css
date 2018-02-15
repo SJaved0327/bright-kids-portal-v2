@@ -16,3 +16,7 @@
 .floatLeft {
 	float: left;
 }
+
+.evalItem:hover{
+	background-color: #fee68d;
+}

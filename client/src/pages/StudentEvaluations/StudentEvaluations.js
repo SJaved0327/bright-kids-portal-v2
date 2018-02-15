@@ -361,9 +361,9 @@ class StudentEvaluations extends React.Component {
 									    	<div className="evalList">
 													{this.state.evaluations.map((evaluation, index) => (
 														<div className="evalRow">
-															<a><h5 value={index} onClick={() => this.handleValueClick(index)}>
+															<a><h6 className="evalItem" value={index} onClick={() => this.handleValueClick(index)}>
 															{evaluation.date} {evaluation.test_type} {evaluation.evaluation_type}
-															</h5></a>
+															</h6></a>
 														</div>
 													))}
 												</div>

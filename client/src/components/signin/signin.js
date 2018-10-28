@@ -5,20 +5,18 @@ import { Link } from "react-router-dom";
 
 import './SignIn.css'
 
-const styles = {
+const style = {
 	formDiv: {
-		border: '1px solid #31ace0',
-		width: '300px',
-		height: '350px',
-		background: '#b5e4f8'
+		paddingLeft: "25px",
+		paddingRight: "25px"
 	},
-	formGroup: {
-		padding: "10px"
-	},
-	label: {
-		margin: "0px 5px 0px 0px"
+	button: {
+		display: "block",
+		marginLeft: "auto",
+		marginRight: "auto"
 	}
 };
+
 
 class SignIn extends React.Component {
 
@@ -38,7 +36,6 @@ class SignIn extends React.Component {
 		this.handleEmailChange = this.handleEmailChange.bind(this);
 
 		this.handlePasswordChange = this.handlePasswordChange.bind(this);
-
 
 	}
 
@@ -95,37 +92,29 @@ class SignIn extends React.Component {
 
 
 
-
-
-
-
 	render() {
 		return (
-			<div className="formDiv card" style={styles.formDiv}>
+			<div className="formDiv card">
 				<form onSubmit={this.handleSubmit}>
 					
-					<img className="img-fluid" src="./logo.png" height="75px" alt="bright kids logo" />
+					<img src="./logo.png" alt="LectureLab logo" />
 					<h3 className="text-center">Sign In</h3>
 
-					<div className="form-group" style={styles.formGroup}>
-						<label htmlFor="emailInput" style={styles.label}>Email address:</label>
+					<div className="form-group" style={style.formDiv}>
+						<label htmlFor="emailInput">Email address:</label>
 						<input type="email" className="form-control" name="emailInput" placeholder="name@example.com" value={this.state.value} onChange={this.handleEmailChange} />
 					</div>
 
-					<div className="form-group" style={styles.formGroup}>
-						<label htmlFor="inputPassword" style={styles.label}>Password:</label>
+					<div className="form-group" style={style.formDiv}>
+						<label htmlFor="inputPassword">Password:</label>
 						<input type="password" className="form-control" name="passwordInput" placeholder="password" value={this.state.value} onChange={this.handlePasswordChange} />
 					</div>
-
-					<input type="submit" value="Submit" onClick={this.handleSubmit} />
-
+						<button type="button" onClick={this.handleSubmit} style={style.button}> Submit </button>
 				</form>
 			</div>
-		)
+		);
 	}
-
-
-}
+};
 
 
 export default SignIn;

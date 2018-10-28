@@ -10,7 +10,7 @@ import LogIn from '../../pages/LogIn';
 import NoMatch from '../../pages/NoMatch';
 import select_path from '../../pages/select_path';
 // components
-import NavbarTurtle from '../../components/navbar';
+import Navbar from '../../components/navbar';
 import Footer from '../../components/footer';
 // assets
 
@@ -22,7 +22,7 @@ import Footer from '../../components/footer';
 
 const Main = () => (
 	<div>
-		<NavbarTurtle />
+		<Navbar />
 		<div className="mainDiv">
 			<Switch>
 			  <Route exact path='/' component={LogIn} />

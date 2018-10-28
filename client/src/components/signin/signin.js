@@ -1,9 +1,9 @@
 
-import React, { Component } from 'react'
+import React from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import './signin.css'
+import './SignIn.css'
 
 const styles = {
 	formDiv: {
@@ -20,7 +20,7 @@ const styles = {
 	}
 };
 
-class SignIn extends Component {
+class SignIn extends React.Component {
 
 
 	constructor(props) {
@@ -104,9 +104,9 @@ class SignIn extends Component {
 			<div className="formDiv card" style={styles.formDiv}>
 				<form onSubmit={this.handleSubmit}>
 					
-					<span id="logoSpan"><img src="./logo.png" width="200px" height="75px" alt="bright kids logo" /></span>
-
+					<img className="img-fluid" src="./logo.png" height="75px" alt="bright kids logo" />
 					<h3 className="text-center">Sign In</h3>
+
 					<div className="form-group" style={styles.formGroup}>
 						<label htmlFor="emailInput" style={styles.label}>Email address:</label>
 						<input type="email" className="form-control" name="emailInput" placeholder="name@example.com" value={this.state.value} onChange={this.handleEmailChange} />
